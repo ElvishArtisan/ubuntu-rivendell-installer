@@ -1,0 +1,14 @@
+This repo contains Rivendell installer systems for Ubuntu. Actual
+installers live in branches with names of the form:
+
+<codename>_<version>
+
+where:
+  <codename> - The human-friendly 'code name' assigned to the relase
+               --i.e. 'buzz' or 'woody'. This value can be found in the
+	       'VERSION_CODENAME' field of '/etc/os-release'.
+
+   <version> - The numeric version number --i.e. '19.04'. This value can be
+               found in the 'VERSION_ID' field of '/etc/os-release'.
+
+The default 'master' branch contains nothing execept this README file.

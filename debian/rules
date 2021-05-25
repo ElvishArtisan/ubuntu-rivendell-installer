@@ -17,6 +17,7 @@ binary:
 	cp scripts/install_rivendell.sh debian/ubuntu-rivendell-installer/root/
 	mkdir -p debian/ubuntu-rivendell-installer/usr/share/ubuntu-rivendell-installer
 	cp assets/50-default.conf.patch debian/ubuntu-rivendell-installer/usr/share/ubuntu-rivendell-installer/
+	cp assets/asound.conf.patch debian/ubuntu-rivendell-installer/usr/share/ubuntu-rivendell-installer/
 	cp assets/auto.misc.template debian/ubuntu-rivendell-installer/usr/share/ubuntu-rivendell-installer/
 	cp assets/docbook5.sh debian/ubuntu-rivendell-installer/usr/share/ubuntu-rivendell-installer/
 	cp assets/paravel_support.pdf debian/ubuntu-rivendell-installer/usr/share/ubuntu-rivendell-installer/

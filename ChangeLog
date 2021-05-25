@@ -5,3 +5,5 @@
 	* Autoconfiscated the package.
 2021-05-25 Fred Gleason <fredg@paravelsystems.com>
 	* Added a 'make deb' target.
+2021-05-25 Fred Gleason <fredg@paravelsystems.com>
+	* Added code to 'debian/rules' to apply 'assets/asound.conf.patch'.

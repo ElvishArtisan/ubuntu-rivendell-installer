@@ -1,0 +1,11 @@
+--- 50-default.conf-orig	2021-05-25 09:00:10.653724572 -0400
++++ 50-default.conf	2021-05-25 10:12:34.002757174 -0400
+@@ -6,7 +6,7 @@
+ # First some standard log files.  Log by facility.
+ #
+ auth,authpriv.*			/var/log/auth.log
+-*.*;auth,authpriv.none		-/var/log/syslog
++*.*;auth,authpriv.none;local7.none		-/var/log/syslog
+ #cron.*				/var/log/cron.log
+ #daemon.*			-/var/log/daemon.log
+ kern.*				-/var/log/kern.log

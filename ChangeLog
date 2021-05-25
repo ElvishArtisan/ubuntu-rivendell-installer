@@ -3,3 +3,5 @@
 	* Populated initial assets and scripts.
 2021-05-25 Fred Gleason <fredg@paravelsystems.com>
 	* Autoconfiscated the package.
+2021-05-25 Fred Gleason <fredg@paravelsystems.com>
+	* Added a 'make deb' target.

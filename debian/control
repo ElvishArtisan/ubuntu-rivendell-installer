@@ -1,0 +1,13 @@
+Source: ubuntu-rivendell-installer
+Section: audio
+Priority: optional
+Maintainer: Fred Gleason <fredg@paravelsystems.com>
+Build-Depends: debhelper-compat (= 12), autotools-dev
+Standards-Version: 4.4.1
+
+Package: ubuntu-rivendell-installer
+Architecture: all
+Depends: ${misc:Depends}
+Description: Rivendell Installer
+ Online installer for bootstrapping the Rivendell Radio Automation System
+ on Ubuntu.

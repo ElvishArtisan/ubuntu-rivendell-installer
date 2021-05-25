@@ -1,12 +1,13 @@
-## Makefile.am
+## automake.am
 ##
-## common/Makefile.am for the ubuntu-rivendell-installer package.
+## Automake.am for ubuntu-rivendell-installer debian/
 ##
 ##   (C) Copyright 2021 Fred Gleason <fredg@paravelsystems.com>
 ##
 ##   This program is free software; you can redistribute it and/or modify
-##   it under the terms of the GNU General Public License version 2 as
-##   published by the Free Software Foundation.
+##   it under the terms of the GNU General Public License as
+##   published by the Free Software Foundation; either version 2 of
+##   the License, or (at your option) any later version.
 ##
 ##   This program is distributed in the hope that it will be useful,
 ##   but WITHOUT ANY WARRANTY; without even the implied warranty of
@@ -19,18 +20,9 @@
 ##
 ## Use automake to process this into a Makefile.in
 
-EXTRA_DIST = 50-default.conf.patch\
-             asound.conf\
-             auto.misc.template\
-             auto.misc.client_template\
-             auto.rd.audiostore.template\
-             docbook5.sh\
-             paravel_support.pdf\
-             rdairplay_skin.png\
-             rdpanel_skin.png\
-             xfce-config.tgz
+SUBDIRS = source
 
-CLEANFILES = *~
-
-MAINTAINERCLEANFILES = *~\
-                       Makefile.in
+EXTRA_DIST = changelog\
+             control\
+             copyright\
+             rules

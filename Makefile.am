@@ -24,6 +24,7 @@ if DOCBOOK_AM
 endif
 
 SUBDIRS = assets\
+          debian\
           scripts\
           $(DOCBOOK_AM_OPT)
 

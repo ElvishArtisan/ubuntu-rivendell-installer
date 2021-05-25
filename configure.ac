@@ -54,8 +54,12 @@ AC_CONFIG_FILES([ \
     assets/Makefile \
     scripts/Makefile \
     docs/Makefile \
+    debian/source/Makefile \
+    debian/Makefile \
+    build_debs.sh \
     Makefile ])
 AC_OUTPUT()
+chmod 755 build_debs.sh
 
 AC_MSG_NOTICE()
 AC_MSG_NOTICE(Now enter 'make' to build the software.)

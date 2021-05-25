@@ -47,13 +47,13 @@ fi
 #
 # Install Dependencies
 #
-apt install openssh-server patch evince telnet samba ntp emacs nfs-common smb-common smbclient xfce4-screenshooter net-tools traceroute gedit ntfs-3g autofs
+apt -y install openssh-server patch evince telnet samba ntp emacs nfs-common smbclient xfce4-screenshooter net-tools traceroute gedit ntfs-3g autofs
 
 if test $MODE = "server" ; then
     #
     # Install MySQL
     #
-    yum -y install mysql-server
+    apt -y install mysql-server
     systemctl start mysql
     systemctl enable mysql
 
@@ -93,9 +93,7 @@ if test $MODE = "standalone" ; then
     #
     # Install MariaDB
     #
-    yum -y install mysql-server
-    systemctl start mysql
-    systemctl enable mysql
+    apt -y install mysql-server
 
     #
     # Enable DB Access for localhost
@@ -125,14 +123,12 @@ cp /usr/share/ubuntu-rivendell-installer/rdpanel_skin.png /usr/share/pixmaps/riv
 #mv /etc/samba/smb.conf /etc/samba/smb-original.conf
 #cp /usr/share/ubuntu-rivendell-installer/smb.conf /etc/samba/
 #cp /usr/share/ubuntu-rivendell-installer/no_screen_blank.conf /etc/X11/xorg.conf.d/
-#mkdir -p /etc/skel/Desktop
-cp /usr/share/ubuntu-rivendell-installer/skel/paravel_support.pdf /etc/skel/Desktop/First\ Steps.pdf
-ln -s /usr/share/rivendell/opsguide.pdf /etc/skel/Desktop/Operations\ Guide.pdf
-tar -C /etc/skel -zxf /usr/share/ubuntu-rivendell-installer/xfce-config.tgz
-adduser -c Rivendell\ Audio --groups audio,wheel rd
-chown -R rd:rd /home/rd
-chmod 0755 /home/rd
-yum -y install lame rivendell rivendell-opsguide
+cp /usr/share/ubuntu-rivendell-installer/paravel_support.pdf /home/rd/Desktop/First\ Steps.pdf
+chown rd:rd /home/rd/Desktop/First\ Steps.pdf
+ln -s /usr/share/rivendell/opsguide.pdf /home/rd/Desktop/Operations\ Guide.pdf
+chown rd:rd /home/rd/Desktop/Operations\ Guide.pdf
+#tar -C /home/rd -zxf /usr/share/ubuntu-rivendell-installer/xfce-config.tgz
+apt install -y install lame rivendell rivendell-opsguide
 
 if test $MODE = "server" ; then
     #
@@ -177,7 +173,7 @@ if test $MODE = "standalone" ; then
     # Create Rivendell Database
     #
     rddbmgr --create --generate-audio
-    echo "update `STATIONS` set `REPORT_EDITOR_PATH`='/usr/bin/gedit'" | mysql -u rduser -pletmein Rivendell
+    echo "update STATIONS set REPORT_EDITOR_PATH='/usr/bin/gedit'" | mysql -u rduser -pletmein Rivendell
 
     #
     # Create common directories

@@ -7,3 +7,8 @@
 	* Added a 'make deb' target.
 2021-05-25 Fred Gleason <fredg@paravelsystems.com>
 	* Added code to 'debian/rules' to apply 'assets/asound.conf.patch'.
+2021-05-25 Fred Gleason <fredg@paravelsystems.com>
+	* Removed 'smb-common' from the list of installed packages in
+	'scripts/install_rivendell.sh'.
+	* Replaced yum(8) with apt(8) in 'scripts/install_rivendell.sh'.
+	* Added 'docs/steps.txt'.

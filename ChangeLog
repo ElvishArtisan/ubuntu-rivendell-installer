@@ -12,3 +12,5 @@
 	'scripts/install_rivendell.sh'.
 	* Replaced yum(8) with apt(8) in 'scripts/install_rivendell.sh'.
 	* Added 'docs/steps.txt'.
+2021-05-26 Fred Gleason <fredg@paravelsystems.com>
+	* Fixed a bug in 'debian/rules' that broke the 'make deb' target.

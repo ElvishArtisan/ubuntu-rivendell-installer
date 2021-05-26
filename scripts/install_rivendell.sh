@@ -126,9 +126,9 @@ cp /usr/share/ubuntu-rivendell-installer/rdpanel_skin.png /usr/share/pixmaps/riv
 cp /usr/share/ubuntu-rivendell-installer/paravel_support.pdf /home/rd/Desktop/First\ Steps.pdf
 chown rd:rd /home/rd/Desktop/First\ Steps.pdf
 ln -s /usr/share/rivendell/opsguide.pdf /home/rd/Desktop/Operations\ Guide.pdf
-chown rd:rd /home/rd/Desktop/Operations\ Guide.pdf
+#chown rd:rd /home/rd/Desktop/Operations\ Guide.pdf
 #tar -C /home/rd -zxf /usr/share/ubuntu-rivendell-installer/xfce-config.tgz
-apt install -y install lame rivendell rivendell-opsguide
+apt -y install lame rivendell rivendell-opsguide
 
 if test $MODE = "server" ; then
     #

@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<article xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink">
+<info>
+  <title>Installing Rivendell 4 on Ubuntu Studio 20.04 LTS Focal Fossa</title>
+  <author>
+    <personname>
+      <firstname>Fred</firstname>
+      <surname>Gleason</surname>
+      <email>fredg@paravelsystems.com</email>
+    </personname>
+  </author>
+</info>
+
+<sect1>
+  <title>Introduction</title>
+  <sect2>
+    <title>Overview</title>
+    <para>
+      This technical note contains procedures for installing the
+      Rivendell Radio Automation System on a system running Ubuntu Studio
+      20.04 LTS Focal Fossa.
+    </para>
+    <para>
+      Installing Rivendell on Ubuntu Studio consists of three primary steps:
+    </para>
+    <orderedlist>
+      <listitem>
+	<para>
+	  Install the base distribution and establish an Internet connection.
+	</para>
+      </listitem>
+      <listitem>
+	<para>
+	  Bootstrap and run the installation script.
+	</para>
+      </listitem>
+      <listitem>
+	<para>
+	  Secure accounts and finish up final details.
+	</para>
+      </listitem>
+    </orderedlist>
+  </sect2>
+  <sect2>
+    <title>Prerequisites</title>
+    <para>
+      The following items are required to complete the installation.
+    </para>
+    <itemizedlist>
+      <listitem>
+	<para>
+	  Target hardware. 64 bit (x86_64) AMD or Intel architecture
+	  is supported. For the purposes of this Note, the target machine
+	  will be assumed to have a single, blank hard drive. Installations
+	  utilizing multiple hard drives (including RAID arrays) are
+	  possible, but beyond the scope of this Note.
+	</para>
+	<note>
+	  Secure Boot should be disabled on the target hardware prior
+	  to beginning installation. Failure to do so may result in
+	  the drivers for third-party hardware --e.g. AudioScience audio
+	  adapters-- failing to initialize properly.	  
+	</note>
+      </listitem>
+      <listitem>
+	<para>
+	  A installer image for Ubuntu Studio 20.04 LTS Focal Fossa,
+	  available at <link xlink:href="https://ubuntustudio.org/">
+	  https://ubuntustudio.org/</link>. After downloading the
+	  ISO image, burn it to a blank DVD or make a "bootable" USB
+	  key using the instructions on the download web site.
+	</para>
+      </listitem>
+      <listitem>
+	<para>
+	  A working Internet connection.
+	</para>
+      </listitem>
+    </itemizedlist>
+  </sect2>
+</sect1>
+
+<sect1>
+  <title>Installing the Base Distribution</title>
+  <para>
+    Boot the Ubuntu Studio 20.04 LTS Focal Fossa installation media (DVD or
+    USB key). You should wind up at the initial boot screen.
+  </para>
+  <para>
+    <mediaobject>
+      <imageobject>
+	<imagedata fileref="bootscreen.png" scale="98"/>
+      </imageobject>
+    </mediaobject>
+  </para>
+  <note>
+    Depending on your specific hardware and BIOS settings, the appearance of
+    the initial boot screen may vary from the example shown.
+  </note>
+  <para>
+    Highlight the <computeroutput>Install Ubuntu Studio</computeroutput>
+    prompt and then press <userinput>Enter</userinput> to proceed to the
+    <computeroutput>Welcome</computeroutput>.
+  </para>
+  <para>
+    <mediaobject>
+      <imageobject>
+	<imagedata fileref="welcome.png" scale="90"/>
+      </imageobject>
+    </mediaobject>
+  </para>
+  <para>
+    You will be asked to specify the language to use for the install.
+    Choose and then touch the <computeroutput>Continue</computeroutput>
+    button to proceed to the
+    <computeroutput>Keyboard Layout</computeroutput> screen.
+  </para>
+  <para>
+    <mediaobject>
+      <imageobject>
+	<imagedata fileref="keyboard_layout.png" scale="90"/>
+      </imageobject>
+    </mediaobject>
+  </para>
+  <para>
+    Choose your desired keyboard layout and then touch the
+    <computeroutput>Continue</computeroutput> button to proceed to the
+    <computeroutput>Updates and other software</computeroutput> screen.
+  </para>
+  <para>
+    <mediaobject>
+      <imageobject>
+	<imagedata fileref="updates_and_other_software.png" scale="90"/>
+      </imageobject>
+    </mediaobject>
+  </para>
+  <para>
+    Touch the <computeroutput>Continue</computeroutput> button to proceed
+    to the <computeroutput>Installation type</computeroutput> screen.
+  </para>
+  <para>
+    <mediaobject>
+      <imageobject>
+	<imagedata fileref="installation_type.png" scale="90"/>
+      </imageobject>
+    </mediaobject>
+  </para>
+  <para>
+    Select the
+    <computeroutput>Erase disk and install Ubuntu Studio</computeroutput>
+    option and then touch <computeroutput>Install Now</computeroutput> to
+    start the actual installation, during which you will be prompted for
+    the timezone to be used on the system.
+  </para>
+  <para>
+    <mediaobject>
+      <imageobject>
+	<imagedata fileref="where_are_you.png" scale="90"/>
+      </imageobject>
+    </mediaobject>
+  </para>
+  <para>
+    Choose the desired region for the time zone and then touch the
+    <computeroutput>Continue</computeroutput> button to proceed to the
+    <computeroutput>Who are you?</computeroutput> screen.
+  </para>
+  <para>
+    <mediaobject>
+      <imageobject>
+	<imagedata fileref="who_are_you.png" scale="90"/>
+      </imageobject>
+    </mediaobject>
+  </para>
+  <para>
+    The following fields should be filled out as follows:
+  </para>
+  <para>
+    <variablelist>
+      <varlistentry>
+	<term>
+	  <computeroutput>Your name:</computeroutput>
+	</term>
+	<listitem>
+	  <para>
+	    <userinput>Rivendell Audio</userinput>
+	  </para>
+	</listitem>
+      </varlistentry>
+      <varlistentry>
+	<term>
+	  <computeroutput>Pick a username:</computeroutput>
+	</term>
+	<listitem>
+	  <para>
+	    <userinput>rd</userinput>
+	  </para>
+	</listitem>
+      </varlistentry>
+    </variablelist>
+  </para>
+  <para>
+    The remaining fields should be filled out as appropriate for your site.
+  </para>
+  <para>
+    When everything is filled out as you wish, touch the
+    <computeroutput>Continue</computeroutput> button to begin the actual
+    installation. This will take a few minutes.
+  </para>
+  <para>
+    <mediaobject>
+      <imageobject>
+	<imagedata fileref="slideshow.png" scale="90"/>
+      </imageobject>
+    </mediaobject>
+  </para>
+  <para>
+    You should eventually see a message that the installation is complete.
+  </para>
+  <para>
+    <mediaobject>
+      <imageobject>
+	<imagedata fileref="installation_complete.png" scale="90"/>
+      </imageobject>
+    </mediaobject>
+  </para>
+  <para>
+    Touch the <computeroutput>Restart Now</computeroutput> button to
+    reboot the system.
+  </para>
+  <para>
+    The system will reboot and come up to the login screen. Login
+    in as user &quot;rd&quot;, using the password that you set earlier.
+  </para>
+  <note>
+    If you ticked the <computeroutput>Log in automatically</computeroutput>
+    checkbox when creating the user earlier, the login prompt will be
+    skipped.
+  </note>
+  <para>
+    After logging in, you may be prompted to update language support.
+  </para>
+  <para>
+    <mediaobject>
+      <imageobject>
+	<imagedata fileref="incomplete_language_support.png" scale="90"/>
+      </imageobject>
+    </mediaobject>
+  </para>
+  <para>
+    If this happens, touch the
+    <computeroutput>Run this action now</computeroutput> button, and then
+    the <computeroutput>Install</computeroutput>.
+  </para>
+  <para>
+    You may also be prompted to install updated software packages.
+  </para>
+  <para>
+    <mediaobject>
+      <imageobject>
+	<imagedata fileref="updated_software_has_been_issued.png" scale="90"/>
+      </imageobject>
+    </mediaobject>
+  </para>
+  <para>
+    If this happens, touch the <computeroutput>Install Now</computeroutput>
+    button and follow the prompts.
+  </para>
+  <para>
+    The system is now ready to have Rivendell installed.
+  </para>
+</sect1>
+
+<sect1>
+  <title>Running the Installation Script</title>
+  <para>
+    Do a right-click with the mouse on the desktop to pop-up and menu
+    and choose the <computeroutput>Open Terminal Here</computeroutput> item.
+  </para>
+  <para>
+    <mediaobject>
+      <imageobject>
+	<imagedata fileref="opening_terminal.png" scale="90"/>
+      </imageobject>
+    </mediaobject>
+  </para>
+  <para>
+    A <computeroutput>Terminal</computeroutput> window will appear.
+  </para>
+  <para>
+    <mediaobject>
+      <imageobject>
+	<imagedata fileref="terminal_window.png" scale="90"/>
+      </imageobject>
+    </mediaobject>
+  </para>
+  <para>
+    Enter the following statements in the Terminal window exactly as shown,
+    pressing the <userinput>Enter</userinput> key after each one:
+  </para>
+  <para>
+    <userinput>sudo wget http://download.paravelsystems.com/ubuntu/dists/focal/main/Paravel-Ubuntu-20.04-Test.gpg -P /etc/apt/trusted.gpg.d/</userinput>
+  </para>
+  <para>
+    <userinput>sudo wget http://download.paravelsystems.com/ubuntu/dists/focal/main/Paravel-Ubuntu-20.04-Test.list -P /etc/apt/sources.list.d/</userinput>
+  </para>
+  <para>
+    <userinput>sudo apt update</userinput>
+  </para>
+  <para>
+    <userinput>sudo apt -y install ubuntu-rivendell-installer</userinput>
+  </para>
+
+
+  <para>
+    Three different types of installation are available. For a stand-alone
+    setup (single, self-contained Rivendell system), start the script
+    with the command:
+  </para>
+  <para>
+    <userinput>/root/install_rivendell.sh --standalone</userinput>
+  </para>
+  <para>
+    For a server setup (system capable of hosting Rivendell client machines
+    that share the server's database and audio store), start the script
+    with the command:
+  </para>
+  <para>
+    <userinput>/root/install_rivendell.sh --server</userinput>
+  </para>
+  <para>
+    For a pure client setup (one that uses a central server for the database
+    and audio store), first create a host entry for the new client in
+    RDAdmin on the server (RDAdmin->ManageHosts->Add), then start the
+    script with the command:
+  </para>
+  <para>
+    <userinput>/root/install_rivendell.sh --client</userinput>
+  </para>
+  <para>
+    Depending upon the speed of the Internet connection, installation can take
+    between several minutes to an hour or more.  When installation is
+    complete, reboot the system with the command:
+  </para>
+  <para>
+    <userinput>reboot</userinput>
+  </para>
+</sect1>
+
+<sect1>
+  <title>Final Details</title>
+  <para>
+    After rebooting, remove the Rivendell installer script with the
+    following command:
+  </para>
+  <para>
+    <userinput>sudo apt -y remove ubuntu-rivendell-installer</userinput>
+  </para>
+  <para>
+    The system is now ready for service.
+  </para>
+</sect1>
+
+</article>

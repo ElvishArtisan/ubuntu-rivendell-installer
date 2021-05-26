@@ -22,3 +22,5 @@
 	* Removed dead code from 'scripts/install_rivendell.sh'.
 2021-05-26 Fred Gleason <fredg@paravelsystems.com>
 	* Added a 'rate 48000' statement to 'assets/asound.conf'.
+2021-05-26 Fred Gleason <fredg@paravelsystems.com>
+	* Added 'docs/'.

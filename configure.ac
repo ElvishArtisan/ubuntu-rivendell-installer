@@ -40,9 +40,9 @@ AC_SUBST(DISTRO,$ar_gcc_distro)
 #
 # Build DocBook Items?
 #
-#if test -z $DOCBOOK_DISABLED ; then
-#  USING_DOCBOOK=yes
-#fi
+if test -z $DOCBOOK_DISABLED ; then
+  USING_DOCBOOK=yes
+fi
 AM_CONDITIONAL([DOCBOOK_AM], [test "$USING_DOCBOOK" = yes])
 
 #

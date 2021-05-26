@@ -36,14 +36,6 @@ maintainer-clean-local:
 deb:	dist
 	./build_debs.sh
 
-web:	dist
-	mkdir -p $(HOME)/rpmbuild/SOURCES
-	cp rivendell-install-$(VERSION).tar.gz $(HOME)/rpmbuild/SOURCES/
-	$(RPMBUILD) -ba --target noarch-$(VENDOR)-linux rivendell-install-web.spec
-	mv $(HOME)/rpmbuild/RPMS/noarch/rivendell-install-*.rpm $(top_srcdir)/
-	mv $(HOME)/rpmbuild/SRPMS/rivendell-install-*.src.rpm $(top_srcdir)/
-	rm $(HOME)/rpmbuild/SOURCES/rivendell-install-$(VERSION).tar.gz
-
 EXTRA_DIST = autogen.sh\
              build_debs.sh.in\
              get_distro.pl\

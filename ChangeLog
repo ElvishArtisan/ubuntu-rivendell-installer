@@ -18,3 +18,5 @@
 	* Fixed typos in 'scripts/install_rivendell.sh'.
 2021-05-26 Fred Gleason <fredg@paravelsystems.com>
 	* Cleaned up warnings from mysql(1) in 'scripts/install_rivendell.sh'.
+2021-05-26 Fred Gleason <fredg@paravelsystems.com>
+	* Removed dead code from 'scripts/install_rivendell.sh'.

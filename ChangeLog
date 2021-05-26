@@ -16,3 +16,5 @@
 	* Fixed a bug in 'debian/rules' that broke the 'make deb' target.
 2021-05-26 Fred Gleason <fredg@paravelsystems.com>
 	* Fixed typos in 'scripts/install_rivendell.sh'.
+2021-05-26 Fred Gleason <fredg@paravelsystems.com>
+	* Cleaned up warnings from mysql(1) in 'scripts/install_rivendell.sh'.

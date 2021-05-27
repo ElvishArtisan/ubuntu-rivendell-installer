@@ -54,8 +54,6 @@ if test $MODE = "server" ; then
     # Install MySQL
     #
     apt -y install mysql-server
-    systemctl start mysql
-    systemctl enable mysql
 
     #
     # Enable DB Access for localhost
@@ -73,27 +71,52 @@ if test $MODE = "server" ; then
     #
     # Enable NFS Access for all remote hosts
     #
+    mkdir -p /home/rd/rd_xfer
+    chown rd:rd /home/rd/rd_xfer
+
+    mkdir -p /home/rd/music_export
+    chown rd:rd /home/rd/music_export
+
+    mkdir -p /home/rd/music_import
+    chown rd:rd /home/rd/music_import
+
+    mkdir -p /home/rd/traffic_export
+    chown rd:rd /home/rd/traffic_export
+
+    mkdir -p /home/rd/traffic_import
+    chown rd:rd /home/rd/traffic_import
+
+    apt -y install nfs-kernel-server
+    mkdir -p /srv/nfs4/var/snd
+    mkdir -p /srv/nfs4/home/rd/music_export
+    mkdir -p /srv/nfs4/home/rd/music_import
+    mkdir -p /srv/nfs4/home/rd/traffic_export
+    mkdir -p /srv/nfs4/home/rd/traffic_import
+    mkdir -p /srv/nfs4/home/rd/rd_xport
+
+    echo "/var/snd /srv/nfs4/var/snd none bind 0 0" >> /etc/fstab
+    echo "/home/rd/music_export /srv/nfs4/home/rd/music_export none bind 0 0" >> /etc/fstab
+    echo "/home/rd/music_import /srv/nfs4/home/rd/music_import none bind 0 0" >> /etc/fstab
+    echo "/home/rd/traffic_export /srv/nfs4/home/rd/traffic_export none bind 0 0" >> /etc/fstab
+    echo "/home/rd/traffic_import /srv/nfs4/home/rd/traffic_import none bind 0 0" >> /etc/fstab
+    echo "/home/rd/rd_xfer /srv/nfs4/home/rd/rd_xfer none bind 0 0" >> /etc/fstab
     echo "/var/snd *(rw,no_root_squash)" >> /etc/exports
     echo "/home/rd/rd_xfer *(rw,no_root_squash)" >> /etc/exports
     echo "/home/rd/music_export *(rw,no_root_squash)" >> /etc/exports
     echo "/home/rd/music_import *(rw,no_root_squash)" >> /etc/exports
     echo "/home/rd/traffic_export *(rw,no_root_squash)" >> /etc/exports
     echo "/home/rd/traffic_import *(rw,no_root_squash)" >> /etc/exports
-    systemctl enable rpcbind
-    systemctl enable nfs-server
 
     #
     # Enable CIFS File Sharing
     #
     cp /etc/samba/smb.conf /etc/samba/smb-original.conf
     cat /usr/share/ubuntu-rivendell-installer/samba_shares.conf >> /etc/samba/smb.conf
-    systemctl enable smbd
-    systemctl enable nmbd
 fi
 
 if test $MODE = "standalone" ; then
     #
-    # Install MariaDB
+    # Install MySQL
     #
     apt -y install mysql-server
 
@@ -124,8 +147,6 @@ cp /usr/share/ubuntu-rivendell-installer/asound.conf /etc/
 mkdir -p /usr/share/pixmaps/rivendell
 cp /usr/share/ubuntu-rivendell-installer/rdairplay_skin.png /usr/share/pixmaps/rivendell/
 cp /usr/share/ubuntu-rivendell-installer/rdpanel_skin.png /usr/share/pixmaps/rivendell/
-
-#cp /usr/share/ubuntu-rivendell-installer/no_screen_blank.conf /etc/X11/xorg.conf.d/
 cp /usr/share/ubuntu-rivendell-installer/paravel_support.pdf /home/rd/Desktop/First\ Steps.pdf
 chown rd:rd /home/rd/Desktop/First\ Steps.pdf
 ln -s /usr/share/rivendell/opsguide.pdf /home/rd/Desktop/Operations\ Guide.pdf
@@ -143,24 +164,6 @@ if test $MODE = "server" ; then
     #
     rddbmgr --create --generate-audio
     echo "update `STATIONS` set `REPORT_EDITOR_PATH`='/usr/bin/gedit'" | mysql -u root Rivendell
-
-    #
-    # Create common directories
-    #
-    mkdir -p /home/rd/rd_xfer
-    chown rd:rd /home/rd/rd_xfer
-
-    mkdir -p /home/rd/music_export
-    chown rd:rd /home/rd/music_export
-
-    mkdir -p /home/rd/music_import
-    chown rd:rd /home/rd/music_import
-
-    mkdir -p /home/rd/traffic_export
-    chown rd:rd /home/rd/traffic_export
-
-    mkdir -p /home/rd/traffic_import
-    chown rd:rd /home/rd/traffic_import
 fi
 
 if test $MODE = "standalone" ; then

@@ -85,6 +85,8 @@ if test $MODE = "server" ; then
     #
     # Enable CIFS File Sharing
     #
+    cp /etc/samba/smb.conf /etc/samba/smb-original.conf
+    cat /usr/share/ubuntu-rivendell-installer/samba_shares.conf >> /etc/samba/smb.conf
     systemctl enable smbd
     systemctl enable nmbd
 fi
@@ -105,6 +107,8 @@ if test $MODE = "standalone" ; then
     #
     # Enable CIFS File Sharing
     #
+    cp /etc/samba/smb.conf /etc/samba/smb-original.conf
+    cat /usr/share/ubuntu-rivendell-installer/samba_shares.conf >> /etc/samba/smb.conf
     systemctl enable smbd
     systemctl enable nmbd
 fi
@@ -120,8 +124,7 @@ cp /usr/share/ubuntu-rivendell-installer/asound.conf /etc/
 mkdir -p /usr/share/pixmaps/rivendell
 cp /usr/share/ubuntu-rivendell-installer/rdairplay_skin.png /usr/share/pixmaps/rivendell/
 cp /usr/share/ubuntu-rivendell-installer/rdpanel_skin.png /usr/share/pixmaps/rivendell/
-#mv /etc/samba/smb.conf /etc/samba/smb-original.conf
-#cp /usr/share/ubuntu-rivendell-installer/smb.conf /etc/samba/
+
 #cp /usr/share/ubuntu-rivendell-installer/no_screen_blank.conf /etc/X11/xorg.conf.d/
 cp /usr/share/ubuntu-rivendell-installer/paravel_support.pdf /home/rd/Desktop/First\ Steps.pdf
 chown rd:rd /home/rd/Desktop/First\ Steps.pdf

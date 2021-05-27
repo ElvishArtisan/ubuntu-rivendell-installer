@@ -23,6 +23,7 @@ binary:
 	cp assets/paravel_support.pdf debian/ubuntu-rivendell-installer/usr/share/ubuntu-rivendell-installer/
 	cp assets/rdairplay_skin.png debian/ubuntu-rivendell-installer/usr/share/ubuntu-rivendell-installer/
 	cp assets/rdpanel_skin.png debian/ubuntu-rivendell-installer/usr/share/ubuntu-rivendell-installer/
+	cp assets/samba_shares.conf debian/ubuntu-rivendell-installer/usr/share/ubuntu-rivendell-installer/
 	cp assets/xfce-config.tgz debian/ubuntu-rivendell-installer/usr/share/ubuntu-rivendell-installer/
 	dh_strip_nondeterminism
 	dh_compress

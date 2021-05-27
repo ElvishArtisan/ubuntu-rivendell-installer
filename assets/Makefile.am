@@ -28,6 +28,7 @@ EXTRA_DIST = 50-default.conf.patch\
              paravel_support.pdf\
              rdairplay_skin.png\
              rdpanel_skin.png\
+             samba_shares.conf\
              xfce-config.tgz
 
 CLEANFILES = *~

@@ -26,3 +26,8 @@
 	* Added 'docs/'.
 2021-05-26 Fred Gleason <fredg@paravelsystems.com>
 	* Renamed the index node document in 'docs/' to 'index.html'.
+2021-05-26 Fred Gleason <fredg@paravelsystems.com>
+	* Added code to the '--standalone' and --server' installations
+	in 'scripts/install_rivendell.sh' add 'music_import', 'music_export',
+	'traffic_import', 'traffic_import' and 'rd_xfer' shares to
+	the target system's smb.conf(5) file.

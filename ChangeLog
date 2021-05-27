@@ -24,3 +24,5 @@
 	* Added a 'rate 48000' statement to 'assets/asound.conf'.
 2021-05-26 Fred Gleason <fredg@paravelsystems.com>
 	* Added 'docs/'.
+2021-05-26 Fred Gleason <fredg@paravelsystems.com>
+	* Renamed the index node document in 'docs/' to 'index.html'.

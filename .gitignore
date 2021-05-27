@@ -3,6 +3,7 @@
 *.changes
 *.deb
 *.dsc
+*.html
 *.tar.gz
 *.tar.xz
 Makefile

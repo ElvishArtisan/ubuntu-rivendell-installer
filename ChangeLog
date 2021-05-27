@@ -38,3 +38,6 @@
 2021-05-27 Fred Gleason <fredg@paravelsystems.com>
 	* Updated 'scripts/installer_install_rivendell.sh' to use NFSv4
 	for the '--server' option.
+2021-05-27 Fred Gleason <fredg@paravelsystems.com>
+	* Added 'assets/auto.rd.audiostore.template' and
+	'assets/auto.misc.client_template' to the package manifest.

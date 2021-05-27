@@ -69,9 +69,9 @@ function InstallServer {
 
 
 function InstallClient {
-    echo "Installing client..."
-
-    echo "Done!"
+    CheckNetwork
+    AddRepos
+    /usr/share/ubuntu-rivendell-installer/installer_install_rivendell.sh --client
     exit 0
 }
 

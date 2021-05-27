@@ -31,3 +31,7 @@
 	in 'scripts/install_rivendell.sh' add 'music_import', 'music_export',
 	'traffic_import', 'traffic_import' and 'rd_xfer' shares to
 	the target system's smb.conf(5) file.
+2021-05-27 Fred Gleason <fredg@paravelsystems.com>
+	* Renamed 'scripts/install_rivendell.sh' to
+	'scripts/installer_install_rivendell.sh'.
+	* Created a new 'scripts/install_rivendell.sh'.

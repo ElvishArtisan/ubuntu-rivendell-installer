@@ -317,7 +317,7 @@
     with the command:
   </para>
   <para>
-    <userinput>sudo /root/install_rivendell.sh --standalone</userinput>
+    <userinput>sudo /usr/share/ubuntu-rivendell-installer/installer_install_rivendell.sh --standalone</userinput>
   </para>
   <para>
     For a server setup (system capable of hosting Rivendell client machines
@@ -325,7 +325,7 @@
     with the command:
   </para>
   <para>
-    <userinput>sudo /root/install_rivendell.sh --server</userinput>
+    <userinput>sudo /usr/share/ubuntu-rivendell-installer/installer_install_rivendell.sh --server</userinput>
   </para>
   <para>
     For a pure client setup (one that uses a central server for the database
@@ -334,7 +334,7 @@
     script with the command:
   </para>
   <para>
-    <userinput>sudo /root/install_rivendell.sh --client</userinput>
+    <userinput>sudo /usr/share/ubuntu-rivendell-installer/installer_install_rivendell.sh --client</userinput>
   </para>
   <para>
     Depending upon the speed of the Internet connection, installation can take

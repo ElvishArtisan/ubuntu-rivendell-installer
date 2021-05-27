@@ -20,7 +20,7 @@
 ## Use automake to process this into a Makefile.in
 
 
-EXTRA_DIST = install_rivendell.sh\
+EXTRA_DIST = installer_install_rivendell.sh\
              install_rivendell_devel.sh
 
 CLEANFILES = *~

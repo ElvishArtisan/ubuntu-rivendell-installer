@@ -3,7 +3,7 @@
 #
 # Set environment for DocBook5-XML Stylesheets
 #
-#    Copyright (C) 2016  Fred Gleason <fredg@paravelsystems.com>
+#    Copyright (C) 2016-2021  Fred Gleason <fredg@paravelsystems.com>
 #
 #    This program is free software; you can redistribute it and/or modify
 #    it under the terms of version 2 of the GNU General Public License as
@@ -20,5 +20,5 @@
 #    Boston, MA  02111-1307  USA
 #
 
-export DOCBOOK_STYLESHEETS=/usr/share/sgml/docbook/xsl-ns-stylesheets
+export DOCBOOK_STYLESHEETS=/usr/share/xml/docbook/stylesheet/docbook-xsl-ns
 

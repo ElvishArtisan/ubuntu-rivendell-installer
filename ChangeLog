@@ -41,3 +41,5 @@
 2021-05-27 Fred Gleason <fredg@paravelsystems.com>
 	* Added 'assets/auto.rd.audiostore.template' and
 	'assets/auto.misc.client_template' to the package manifest.
+2021-06-02 Fred Gleason <fredg@paravelsystems.com>
+	* Added 'hpklinux-dev' to 'scripts/install_rivendell_devel.sh'.

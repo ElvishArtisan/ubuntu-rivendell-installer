@@ -54,6 +54,7 @@ if test $MODE = "server" ; then
     # Install MySQL
     #
     apt -y install mysql-server
+    patch -p0 /etc/mysql/mysql.conf.d/mysqld.cnf /usr/share/ubuntu-rivendell-installer/mysqld.cnf-patch
 
     #
     # Enable DB Access for localhost

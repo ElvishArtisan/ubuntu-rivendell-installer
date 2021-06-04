@@ -1,0 +1,11 @@
+--- mysqld.cnf-orig	2021-06-04 08:18:37.500353030 -0400
++++ mysqld.cnf	2021-06-04 08:19:03.321309500 -0400
+@@ -28,7 +28,7 @@
+ #
+ # Instead of skip-networking the default is now to listen only on
+ # localhost which is more compatible and is not less secure.
+-bind-address		= 127.0.0.1
++bind-address		= *
+ mysqlx-bind-address	= 127.0.0.1
+ #
+ # * Fine Tuning

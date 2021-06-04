@@ -49,3 +49,6 @@
 	* Tweaked file permissions of 'assets/docbook5.sh'.
 	* Added code to install 'docbook5.sh' to
 	'install_rivendell_devel.sh'.
+2021-06-04 Fred Gleason <fredg@paravelsystems.com>
+	* Added a patch to enable remote network connections to mysqld(8)
+	when installing in '--server' mode.

@@ -80,14 +80,14 @@ function InstallClient {
 #
 echo "Welcome to the Rivendell installer!"
 echo
-echo "This installer can download the Rivendell Radio Automation System from"
-echo "the Internet and install it on this system."
+echo "This installer downloads the Rivendell Radio Automation System from"
+echo "the Internet and installs it on this system."
 echo
 echo "Three different styles of setup for Rivendell are available:"
 echo
-echo " 1) Standalone. All system components (Rivendell code, database server and"
-echo"     audio store) will be installed on this system, allowing it to function"
-echo "    as a self-contained, autonomous Rivendell system."
+echo " 1) Standalone. All system components (Rivendell code, database server"
+echo "    and audio store) will be installed on this system, allowing it to"
+echo "    function as a self-contained, autonomous Rivendell system."
 echo
 echo " 2) Server. Same as Standalone, but in addition, configure the database"
 echo "    and audio store to be shared with other Rivendell systems over the"

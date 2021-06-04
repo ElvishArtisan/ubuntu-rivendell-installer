@@ -74,7 +74,7 @@ function InstallClient {
     echo -n "Enter IP address of Rivendell server: "
     read RD_SERVER
     AddRepos
-    /usr/share/ubuntu-rivendell-installer/installer_install_rivendell.sh --client $$RD_SERVER
+    /usr/share/ubuntu-rivendell-installer/installer_install_rivendell.sh --client $RD_SERVER
     exit 0
 }
 

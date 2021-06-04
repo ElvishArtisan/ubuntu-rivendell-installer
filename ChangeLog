@@ -64,3 +64,7 @@
 2021-06-04 Fred Gleason <fredg@paravelsystems.com>
 	* Fixed a bug in 'debian/rules' that resulted in
 	'assets/mysqld.cnf-patch' not being installed correctly.
+2021-06-04 Fred Gleason <fredg@paravelsystems.com>
+	* Fixed a typo in 'scripts/install_rivendell.sh' that caused the
+	server IP address to be incorrectly configured when using '--client'
+	mode.

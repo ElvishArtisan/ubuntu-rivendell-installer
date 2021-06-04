@@ -54,3 +54,6 @@
 	when installing in '--server' mode.
 2021-06-04 Fred Gleason <fredg@paravelsystems.com>
 	* Tweaked the prompt text in 'scripts/install_rivendell.sh'.
+2021-06-04 Fred Gleason <fredg@paravelsystems.com>
+	* Updated 'scripts/auto.misc.client_template' to work properly
+	with autofs v5.1.6.

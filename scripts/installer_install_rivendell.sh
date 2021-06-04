@@ -205,17 +205,26 @@ if test $MODE = "client" ; then
     #
     rm -f /etc/auto.rd.audiostore
     cat /usr/share/ubuntu-rivendell-installer/auto.rd.audiostore.template | sed s/@IP_ADDRESS@/$IP_ADDR/g > /etc/auto.rd.audiostore
-
+    mkdir -p /misc/rd_xfer
     rm -f /home/rd/rd_xfer
     ln -s /misc/rd_xfer /home/rd/rd_xfer
+
+    mkdir -p /misc/music_export
     rm -f /home/rd/music_export
     ln -s /misc/music_export /home/rd/music_export
+
+    mkdir -p /misc/music_import
     rm -f /home/rd/music_import
     ln -s /misc/music_import /home/rd/music_import
+
+    mkdir -p /misc/traffic_export
     rm -f /home/rd/traffic_export
     ln -s /misc/traffic_export /home/rd/traffic_export
+
+    mkdir -p /misc/traffic_import
     rm -f /home/rd/traffic_import
     ln -s /misc/traffic_import /home/rd/traffic_import
+
     rm -f /etc/auto.misc
     cat /usr/share/ubuntu-rivendell-installer/auto.misc.client_template | sed s/@IP_ADDRESS@/$IP_ADDR/g > /etc/auto.misc
     systemctl enable autofs

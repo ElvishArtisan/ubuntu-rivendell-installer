@@ -17,6 +17,7 @@ if test $1 ; then
     case "$1" in
 	--client)
 	    MODE="client"
+	    IP_ADDR=$2
 	    ;;
 
 	--server)
@@ -34,14 +35,6 @@ if test $1 ; then
     esac
 else
     MODE="standalone"
-fi
-
-#
-# Get Server IP Address
-#
-if test $MODE = "client" ; then
-    echo -n "Enter IP address of Rivendell server: "
-    read IP_ADDR
 fi
 
 #

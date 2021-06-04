@@ -43,6 +43,7 @@ function CheckNetwork {
     fi
 }
 
+
 function AddRepos {
     echo "Adding repo..."
     wget http://download.paravelsystems.com/ubuntu/dists/focal/main/Paravel-Ubuntu-20.04-Test.gpg -P /etc/apt/trusted.gpg.d/
@@ -70,8 +71,10 @@ function InstallServer {
 
 function InstallClient {
     CheckNetwork
+    echo -n "Enter IP address of Rivendell server: "
+    read RD_SERVER
     AddRepos
-    /usr/share/ubuntu-rivendell-installer/installer_install_rivendell.sh --client
+    /usr/share/ubuntu-rivendell-installer/installer_install_rivendell.sh --client $$RD_SERVER
     exit 0
 }
 
@@ -93,7 +96,7 @@ echo " 2) Server. Same as Standalone, but in addition, configure the database"
 echo "    and audio store to be shared with other Rivendell systems over the"
 echo "    network."
 echo
-echo " 3) Client. Install just the Rivendell component, configuring it to"
+echo " 3) Client. Install just the Rivendell components, configuring it to"
 echo "    use the database and audio store on a shared server."
 echo
 echo " 4) Do nothing, and exit this installer."

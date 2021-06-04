@@ -68,3 +68,9 @@
 	* Fixed a typo in 'scripts/install_rivendell.sh' that caused the
 	server IP address to be incorrectly configured when using '--client'
 	mode.
+2021-06-04 Fred Gleason <fredg@paravelsystems.com>
+	* Added code to 'scripts/installer_install_rivendell.sh' to
+	change the 'SyslogFacility=1' line to 'SyslogFacility=23' in
+	'/etc/rd.conf'.
+	* Fixed a bug in 'scripts/installer_install_rivendell.sh' that
+	failed to preserve '/etc/rd.conf' as a symlink.

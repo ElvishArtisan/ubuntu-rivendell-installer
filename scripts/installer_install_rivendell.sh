@@ -145,6 +145,9 @@ cp /usr/share/ubuntu-rivendell-installer/paravel_support.pdf /home/rd/Desktop/Fi
 chown rd:rd /home/rd/Desktop/First\ Steps.pdf
 ln -s /usr/share/rivendell/opsguide.pdf /home/rd/Desktop/Operations\ Guide.pdf
 apt -y install lame rivendell rivendell-opsguide
+cat /etc/rd.conf | sed s/SyslogFacility=1/SyslogFacility=23/g > /etc/rd-temp.conf
+mv -f /etc/rd-temp.conf /etc/rd.conf
+
 
 if test $MODE = "server" ; then
     #
@@ -226,8 +229,7 @@ if test $MODE = "client" ; then
     # Configure Rivendell
     #
     cat /etc/rd.conf | sed s/localhost/$IP_ADDR/g > /etc/rd-temp.conf
-    rm -f /etc/rd.conf
-    mv /etc/rd-temp.conf /etc/rd.conf
+    mv -f /etc/rd-temp.conf /etc/rd.conf
 fi
 
 #

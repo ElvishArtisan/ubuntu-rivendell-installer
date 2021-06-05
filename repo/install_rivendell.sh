@@ -21,8 +21,6 @@
 #   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 #
 
-REPO_SERVER="download.paravelsystems.com"
-
 function Continue {
   read -a RESP -p "Continue (y/N) "
   echo
@@ -36,7 +34,7 @@ function Continue {
 
 
 function CheckNetwork {
-    ping -c 2 $REPO_SERVER > /dev/null 2> /dev/null
+    ping -c 2 software.paravelsystems.com > /dev/null 2> /dev/null
     if [ $? != 0 ] ; then
 	echo "Unable to access the public Internet, exiting."
 	exit 1
@@ -46,8 +44,8 @@ function CheckNetwork {
 
 function AddRepos {
     echo "Adding repo..."
-    wget http://download.paravelsystems.com/ubuntu/dists/focal/main/Paravel-Ubuntu-20.04-Test.gpg -P /etc/apt/trusted.gpg.d/
-    wget http://download.paravelsystems.com/ubuntu/dists/focal/main/Paravel-Ubuntu-20.04-Test.list -P /etc/apt/sources.list.d/
+    wget http://software.paravelsystems.com/ubuntu/dists/focal/main/Paravel-Ubuntu-20.04-Test.gpg -P /etc/apt/trusted.gpg.d/
+    wget http://software.paravelsystems.com/ubuntu/dists/focal/main/Paravel-Ubuntu-20.04-Test.list -P /etc/apt/sources.list.d/
     apt update
     apt -y install ubuntu-rivendell-installer
 }

@@ -79,3 +79,12 @@
 	after installation completes.
 2021-06-04 Fred Gleason <fredg@paravelsystems.com>
 	* Removed 'docs/steps.txt'.
+2021-06-05 Fred Gleason <fredg@paravelsystems.com>
+	* Added 'repo/' directory to contains files to be symlinked to
+	the 'main/' directory of the repo file hierarchy.
+	* Moved 'scripts/install_rivendell.sh' to 'repo/install_rivendell.sh'.
+	* Moved 'scripts/install_rivendell_devel.sh' to
+	'repo/install_rivendell_devel.sh'.
+	* Added 'repo/sanity_check.sh'
+	* Added 'repo/Makefile.repo'.
+	* Added 'repo/README'.

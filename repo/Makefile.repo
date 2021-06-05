@@ -1,0 +1,24 @@
+# Makefile for the Paravel Ubuntu 20.04 repo
+
+#SHELL := /bin/bash
+
+REPO_KEY = "Paravel Ubuntu 20.04 Test Key"
+
+
+all:	clean
+	apt-ftparchive --arch amd64 packages binary-amd64 > Packages
+	gzip -k -f Packages
+	apt-ftparchive release . > Release
+	gpg --default-key $(REPO_KEY) -abs -o Release.gpg Release
+	gpg --default-key $(REPO_KEY) --clearsign -o InRelease Release
+
+post:	sane
+	rsync -rptgoDv --copy-links --delete --exclude Makefile --exclude sanity_check.sh . software.paravelsystems.com::ubuntu_focal/
+
+sane:	
+	./sanity_check.sh  
+
+clean:
+	rm -f Packages*
+	rm -f Release*
+	rm -f InRelease*

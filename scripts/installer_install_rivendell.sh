@@ -6,11 +6,6 @@
 #
 
 #
-# Site Defines
-#
-REPO_HOSTNAME="download.paravelsystems.com"
-
-#
 # Get Target Mode
 #
 if test $1 ; then

@@ -298,10 +298,10 @@
     pressing the <userinput>Enter</userinput> key after each one:
   </para>
   <para>
-    <userinput>sudo wget http://download.paravelsystems.com/ubuntu/dists/focal/main/Paravel-Ubuntu-20.04-Test.gpg -P /etc/apt/trusted.gpg.d/</userinput>
+    <userinput>sudo wget http://software.paravelsystems.com/ubuntu/dists/focal/main/Paravel-Ubuntu-20.04-Test.gpg -P /etc/apt/trusted.gpg.d/</userinput>
   </para>
   <para>
-    <userinput>sudo wget http://download.paravelsystems.com/ubuntu/dists/focal/main/Paravel-Ubuntu-20.04-Test.list -P /etc/apt/sources.list.d/</userinput>
+    <userinput>sudo wget http://software.paravelsystems.com/ubuntu/dists/focal/main/Paravel-Ubuntu-20.04-Test.list -P /etc/apt/sources.list.d/</userinput>
   </para>
   <para>
     <userinput>sudo apt update</userinput>

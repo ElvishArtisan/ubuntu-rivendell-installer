@@ -88,3 +88,6 @@
 	* Added 'repo/sanity_check.sh'
 	* Added 'repo/Makefile.repo'.
 	* Added 'repo/README'.
+2021-06-05 Fred Gleason <fredg@paravelsystems.com>
+	* Updated 'repo/Makefile.repo' to regenerate the public keychain
+	as part of the 'make sign' target.

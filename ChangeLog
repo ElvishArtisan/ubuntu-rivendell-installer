@@ -77,3 +77,5 @@
 2021-06-04 Fred Gleason <fredg@paravelsystems.com>
 	* Added code to remove the 'ubuntu-rivendell-installer' package
 	after installation completes.
+2021-06-04 Fred Gleason <fredg@paravelsystems.com>
+	* Removed 'docs/steps.txt'.

@@ -94,3 +94,6 @@
 2021-06-07 Fred Gleason <fredg@paravelsystems.com>
 	* Updated 'repo/install_rivendell_devel.sh' so as to not depend upon
 	the 'ubuntu-rivendell-installer' package being installed.
+2021-06-07 Fred Gleason <fredg@paravelsystems.com>
+	* Fixed a regression in 'debian/rules' that caused
+	'install_rivendell.sh' to fail to be included in the package.

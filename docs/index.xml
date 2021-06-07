@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <article xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink">
 <info>
-  <title>Installing Rivendell 4 on Ubuntu Studio 20.04 LTS Focal Fossa</title>
+  <title>Creating a Rivendell 4 dedicated appliance using Ubuntu Studio 20.04
+  LTS Focal Fossa</title>
   <author>
     <personname>
       <firstname>Fred</firstname>
@@ -16,27 +17,22 @@
   <sect2>
     <title>Overview</title>
     <para>
-      This technical note contains procedures for installing the
-      Rivendell Radio Automation System on a system running Ubuntu Studio
-      20.04 LTS Focal Fossa.
+      This HOWTO contains procedures for creating a dedicated Rivendell
+      &quot;appliance&quot; system using the
+      Ubuntu Studio 20.04 LTS Focal Fossa distribution.
     </para>
     <para>
-      Installing Rivendell on Ubuntu Studio consists of three primary steps:
+      Installing Rivendell on Ubuntu Studio consists of these primary steps:
     </para>
     <orderedlist>
       <listitem>
 	<para>
-	  Install the base distribution and establish an Internet connection.
+	  Install the base distribution.
 	</para>
       </listitem>
       <listitem>
 	<para>
 	  Bootstrap and run the installation script.
-	</para>
-      </listitem>
-      <listitem>
-	<para>
-	  Secure accounts and finish up final details.
 	</para>
       </listitem>
     </orderedlist>
@@ -50,16 +46,16 @@
       <listitem>
 	<para>
 	  Target hardware. 64 bit (x86_64) AMD or Intel architecture
-	  is supported. For the purposes of this Note, the target machine
+	  is supported. For the purposes of this HOWTO, the target machine
 	  will be assumed to have a single, blank hard drive. Installations
 	  utilizing multiple hard drives (including RAID arrays) are
-	  possible, but beyond the scope of this Note.
+	  possible, but beyond the scope of this HOWTO.
 	</para>
 	<note>
 	  Secure Boot should be disabled on the target hardware prior
 	  to beginning installation. Failure to do so may result in
-	  the drivers for third-party hardware --e.g. AudioScience audio
-	  adapters-- failing to initialize properly.	  
+	  third-party drivers for certain hardware --e.g. AudioScience
+	  audio adapters-- failing to initialize properly.	  
 	</note>
       </listitem>
       <listitem>
@@ -74,6 +70,14 @@
       <listitem>
 	<para>
 	  A working Internet connection.
+	</para>
+      </listitem>
+      <listitem>
+	<para>
+	  If you are planning to install in
+	  <link linkend="installation_modes">client mode</link>,
+	  the IP address of the Rivendell server to which this instance
+	  will connect.
 	</para>
       </listitem>
     </itemizedlist>
@@ -294,69 +298,105 @@
     </mediaobject>
   </para>
   <para>
-    Enter the following statements in the Terminal window exactly as shown,
+    Enter the following statement in the Terminal window exactly as shown,
     pressing the <userinput>Enter</userinput> key after each one:
   </para>
   <para>
-    <userinput>sudo wget http://software.paravelsystems.com/ubuntu/dists/focal/main/Paravel-Ubuntu-20.04-Test.gpg -P /etc/apt/trusted.gpg.d/</userinput>
+    <userinput> wget http://software.paravelsystems.com/ubuntu/dists/focal/main/install_rivendell.sh -P .</userinput>
   </para>
   <para>
-    <userinput>sudo wget http://software.paravelsystems.com/ubuntu/dists/focal/main/Paravel-Ubuntu-20.04-Test.list -P /etc/apt/sources.list.d/</userinput>
+    <userinput>chmod 755 install_rivendell.sh</userinput>
   </para>
   <para>
-    <userinput>sudo apt update</userinput>
+    <userinput>sudo ./install_rivendell.sh</userinput>
   </para>
   <para>
-    <userinput>sudo apt -y install ubuntu-rivendell-installer</userinput>
+    You will be prompted for the password for user
+    <computeroutput>rd</computeroutput>. Enter the password that you set
+    during the installation process.
+  </para>
+  <note>
+    The password will <emphasis>not</emphasis> be visible on the screen
+    as you enter it!
+  </note>
+  <para>
+    <mediaobject>
+      <imageobject>
+	<imagedata fileref="user_rd_password_prompt.png" scale="90"/>
+      </imageobject>
+    </mediaobject>
+  </para>
+  
+  <para>
+    The installer will now start up and display its main menu.
+  </para>
+  <para>
+    <mediaobject>
+      <imageobject>
+	<imagedata fileref="installer_menu.png" scale="90"/>
+      </imageobject>
+    </mediaobject>
   </para>
 
-
-  <para>
-    Three different types of installation are available. For a stand-alone
-    setup (single, self-contained Rivendell system), start the script
-    with the command:
+  <para xml:id="installation_modes">
+    The installer supports three different &quot;installation modes&quot;
+    for Rivendell, as follows:
   </para>
   <para>
-    <userinput>sudo /usr/share/ubuntu-rivendell-installer/installer_install_rivendell.sh --standalone</userinput>
+    <variablelist>
+      <varlistentry>
+	<term>Standalone</term>
+	<listitem>
+	  <para>
+	    Install system components (Rivendell application code, MySQL
+	    database server and audio file store) on this machine, allowing
+	    it to operate as a completely self-contained and autonomous
+	    Rivendell system.
+	  </para>
+	</listitem>
+      </varlistentry>
+      <varlistentry>
+	<term>Server</term>
+	<listitem>
+	  <para>
+	    The same as &quot;Standalone&quot;, but will also configure
+	    the MySQL database and audio file store components to be shared
+	    with additional &quot;client mode&quot; Rivendell systems.
+	  </para>
+	</listitem>
+      </varlistentry>
+      <varlistentry>
+	<term>Client</term>
+	<listitem>
+	  <para>
+	    Install only the Rivendell application code and configure
+	    the system to use the MySQL database and audio file store
+	    components located on a separate &quot;server&quot; system.
+	    You will be prompted to enter the IP address of that server
+	    system before the installation starts.
+	  </para>
+	  <para>
+	    The &quot;server&quot; does not actually need to be online
+	    during this installation.
+	  </para>
+	</listitem>
+      </varlistentry>
+    </variablelist>
   </para>
   <para>
-    For a server setup (system capable of hosting Rivendell client machines
-    that share the server's database and audio store), start the script
-    with the command:
+    Enter the number for the type of installation desired, then press the
+    <userinput>Enter</userinput> key.
   </para>
   <para>
-    <userinput>sudo /usr/share/ubuntu-rivendell-installer/installer_install_rivendell.sh --server</userinput>
-  </para>
-  <para>
-    For a pure client setup (one that uses a central server for the database
-    and audio store), first create a host entry for the new client in
-    RDAdmin on the server (RDAdmin->ManageHosts->Add), then start the
-    script with the command:
-  </para>
-  <para>
-    <userinput>sudo /usr/share/ubuntu-rivendell-installer/installer_install_rivendell.sh --client</userinput>
-  </para>
-  <para>
-    Depending upon the speed of the Internet connection, installation can take
-    between several minutes to an hour or more.  When installation is
+    Depending upon the speed of the Internet connection, installation will
+    typically take around fifteen minutes. When installation is
     complete, reboot the system with the command:
   </para>
   <para>
     <userinput>sudo reboot</userinput>
   </para>
-</sect1>
-
-<sect1>
-  <title>Final Details</title>
   <para>
-    After rebooting, remove the Rivendell installer script with the
-    following command:
-  </para>
-  <para>
-    <userinput>sudo apt -y remove ubuntu-rivendell-installer</userinput>
-  </para>
-  <para>
-    The system is now ready for service.
+    After the reboot, the system is ready for service.
   </para>
 </sect1>
 

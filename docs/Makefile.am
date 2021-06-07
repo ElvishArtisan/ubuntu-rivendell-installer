@@ -35,12 +35,14 @@ EXTRA_DIST = bootscreen.png\
              installation_type.png\
              index.html\
              index.xml\
+             installer_menu.png\
              keyboard_layout.png\
              opening_terminal.png\
              slideshow.png\
              terminal_window.png\
              updated_software_has_been_issued.png\
              updates_and_other_software.png\
+             user_rd_password_prompt.png\
              welcome.png\
              where_are_you.png\
              who_are_you.png

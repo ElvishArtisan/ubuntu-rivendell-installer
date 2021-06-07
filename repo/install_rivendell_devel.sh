@@ -29,4 +29,4 @@ apt install apache2 libexpat1-dev libexpat1 libid3-dev libcurl4-gnutls-dev libco
 #
 # Configure Environment
 #
-cp /usr/share/ubuntu-rivendell-installer/docbook5.sh /etc/profile.d/
+echo "export DOCBOOK_STYLESHEETS=/usr/share/xml/docbook/stylesheet/docbook-xsl-ns" > /etc/profile.d/docbook5.sh

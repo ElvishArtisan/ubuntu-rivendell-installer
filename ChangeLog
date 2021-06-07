@@ -100,3 +100,5 @@
 2021-06-07 Fred Gleason <fredg@paravelsystems.com>
 	* Updated 'docs/index.xml' to reflect the new single-download
 	installation script.
+2021-06-07 Fred Gleason <fredg@paravelsystems.com>
+	* Added a beta warning section to the installation instructions.

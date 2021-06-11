@@ -112,3 +112,5 @@
 	to 'repo/install_rivendell.sh'.
 2021-06-11 Fred Gleason <fredg@paravelsystems.com>
 	* Incremented the package version to 0.1.1.
+2021-06-11 Fred Gleason <fredg@paravelsystems.com>
+	* Added a 'make howto' target to post instructions.

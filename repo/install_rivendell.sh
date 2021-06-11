@@ -51,11 +51,19 @@ function AddRepos {
 }
 
 
+function Finish {
+    apt -y remove ubuntu-rivendell-installer
+    echo
+    echo "Installation of Rivendell is complete. Reboot now."
+    echo
+}
+
+
 function InstallStandalone {
     CheckNetwork
     AddRepos
     /usr/share/ubuntu-rivendell-installer/installer_install_rivendell.sh --standalone
-    apt -y remove ubuntu-rivendell-installer
+    Finish
     exit 0
 }
 
@@ -64,7 +72,7 @@ function InstallServer {
     CheckNetwork
     AddRepos
     /usr/share/ubuntu-rivendell-installer/installer_install_rivendell.sh --server
-    apt -y remove ubuntu-rivendell-installer
+    Finish
     exit 0
 }
 
@@ -75,7 +83,7 @@ function InstallClient {
     read RD_SERVER
     AddRepos
     /usr/share/ubuntu-rivendell-installer/installer_install_rivendell.sh --client $RD_SERVER
-    apt -y remove ubuntu-rivendell-installer
+    Finish
     exit 0
 }
 

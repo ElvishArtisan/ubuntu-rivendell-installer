@@ -110,3 +110,5 @@
 2021-06-11 Fred Gleason <fredg@paravelsystems.com>
 	* Added a 'Reboot now' message upon installation completion
 	to 'repo/install_rivendell.sh'.
+2021-06-11 Fred Gleason <fredg@paravelsystems.com>
+	* Incremented the package version to 0.1.1.

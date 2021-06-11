@@ -14,5 +14,6 @@ build_debs.sh
 config.log
 config.status
 configure
+debian/changelog
 install-sh
 missing

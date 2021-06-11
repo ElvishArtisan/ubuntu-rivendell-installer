@@ -23,6 +23,9 @@
 SUBDIRS = source
 
 EXTRA_DIST = changelog\
+             changelog.src\
              control\
              copyright\
              rules
+
+MAINTAINERCLEANFILES = changelog

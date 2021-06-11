@@ -102,3 +102,6 @@
 	installation script.
 2021-06-07 Fred Gleason <fredg@paravelsystems.com>
 	* Added a beta warning section to the installation instructions.
+2021-06-11 Fred Gleason <fredg@paravelsystems.com>
+	* Modified the build system to derive 'debian/changelog'
+	automatically.

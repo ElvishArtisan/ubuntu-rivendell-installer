@@ -105,3 +105,5 @@
 2021-06-11 Fred Gleason <fredg@paravelsystems.com>
 	* Modified the build system to derive 'debian/changelog'
 	automatically.
+2021-06-11 Fred Gleason <fredg@paravelsystems.com>
+	* Incremented the package version to 0.1.0.

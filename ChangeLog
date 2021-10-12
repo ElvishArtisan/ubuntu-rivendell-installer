@@ -116,3 +116,6 @@
 	* Added a 'make howto' target to post instructions.
 2021-10-12 Fred Gleason <fredg@paravelsystems.com>
 	* Changed the repo links to use SSL.
+2021-10-12 Fred Gleason <fredg@paravelsystems.com>
+	* Amplified the instructions about applying online updates before
+	running the installation script.

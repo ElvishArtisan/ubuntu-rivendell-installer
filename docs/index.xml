@@ -266,7 +266,12 @@
     the <computeroutput>Install</computeroutput>.
   </para>
   <para>
-    You may also be prompted to install updated software packages.
+    You may also be prompted to install updated software packages (evidenced
+    by the appearance of an item the phrase &quot;[Software Updater]&quot; on
+    the top taskbar of the desktop). If this happens, touch the item to
+    open the updater dialog and then the
+    <computeroutput>Install Now</computeroutput> button to install the
+    updates.
   </para>
   <para>
     <mediaobject>
@@ -276,9 +281,15 @@
     </mediaobject>
   </para>
   <para>
-    If this happens, touch the <computeroutput>Install Now</computeroutput>
-    button and follow the prompts.
+    Following which you should see this message.
   </para>
+  <para>
+    <mediaobject>
+      <imageobject>
+	<imagedata fileref="software_on_this_computer_is_up_to_date.png" scale="90"/>
+      </imageobject>
+    </mediaobject>
+  </para>  
   <para>
     The system is now ready to have Rivendell installed.
   </para>
@@ -312,7 +323,7 @@
     pressing the <userinput>Enter</userinput> key after each one:
   </para>
   <para>
-    <userinput> wget http://software.paravelsystems.com/ubuntu/dists/focal/main/install_rivendell.sh -P .</userinput>
+    <userinput> wget https://software.paravelsystems.com/ubuntu/dists/focal/main/install_rivendell.sh -P .</userinput>
   </para>
   <para>
     <userinput>chmod 755 install_rivendell.sh</userinput>

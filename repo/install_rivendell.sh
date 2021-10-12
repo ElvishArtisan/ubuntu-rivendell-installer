@@ -44,8 +44,8 @@ function CheckNetwork {
 
 function AddRepos {
     echo "Adding repo..."
-    wget http://software.paravelsystems.com/ubuntu/dists/focal/main/Paravel-Ubuntu-20.04-Test.gpg -P /etc/apt/trusted.gpg.d/
-    wget http://software.paravelsystems.com/ubuntu/dists/focal/main/Paravel-Ubuntu-20.04-Test.list -P /etc/apt/sources.list.d/
+    wget https://software.paravelsystems.com/ubuntu/dists/focal/main/Paravel-Ubuntu-20.04-Test.gpg -P /etc/apt/trusted.gpg.d/
+    wget https://software.paravelsystems.com/ubuntu/dists/focal/main/Paravel-Ubuntu-20.04-Test.list -P /etc/apt/sources.list.d/
     apt update
     apt -y install ubuntu-rivendell-installer
 }

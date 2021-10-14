@@ -42,7 +42,7 @@ if test $MODE = "server" ; then
     # Install MariaDB
     #
     apt -y install mariadb-server
-    patch -p0 /etc/mysql/mysql.conf.d/mysqld.cnf /usr/share/ubuntu-rivendell-installer/mysqld.cnf-patch
+    cp -f /usr/share/ubuntu-rivendell-installer/90-rivendell.conf /etc/mysql/mariadb.conf.d/
 
     #
     # Enable DB Access for localhost

@@ -20,12 +20,12 @@
 ## Use automake to process this into a Makefile.in
 
 EXTRA_DIST = 50-default.conf.patch\
+             90-rivendell.conf\
              asound.conf\
              auto.misc.template\
              auto.misc.client_template\
              auto.rd.audiostore.template\
              docbook5.sh\
-             mysqld.cnf-patch\
              paravel_support.pdf\
              rdairplay_skin.png\
              rdpanel_skin.png\

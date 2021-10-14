@@ -125,3 +125,6 @@
 	* Replaced MySQL with MariaDB.
 2021-10-14 Fred Gleason <fredg@paravelsystems.com>
 	* Fixed various typos in 'docs/index.xml'.
+2021-10-14 Fred Gleason <fredg@paravelsystems.com>
+	* Fixed a regression that caused MariaDB to refuse network
+	connections after being installed using '--server' mode.

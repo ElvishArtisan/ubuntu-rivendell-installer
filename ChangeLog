@@ -121,3 +121,5 @@
 	running the installation script.
 2021-10-14 Fred Gleason <fredg@paravelsystems.com>
 	* Fixed a typo in 'docs/Makefile.am' that broke the build.
+2021-10-14 Fred Gleason <fredg@paravelsystems.com>
+	* Replaced MySQL with MariaDB.

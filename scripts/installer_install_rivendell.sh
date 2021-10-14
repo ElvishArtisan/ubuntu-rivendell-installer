@@ -39,9 +39,9 @@ apt -y install openssh-server patch evince telnet samba ntp emacs nfs-common smb
 
 if test $MODE = "server" ; then
     #
-    # Install MySQL
+    # Install MariaDB
     #
-    apt -y install mysql-server
+    apt -y install mariadb-server
     patch -p0 /etc/mysql/mysql.conf.d/mysqld.cnf /usr/share/ubuntu-rivendell-installer/mysqld.cnf-patch
 
     #
@@ -105,9 +105,9 @@ fi
 
 if test $MODE = "standalone" ; then
     #
-    # Install MySQL
+    # Install MariaDB
     #
-    apt -y install mysql-server
+    apt -y install mariadb-server
 
     #
     # Enable DB Access for localhost

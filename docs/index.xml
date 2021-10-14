@@ -18,7 +18,10 @@
     This installation HOWTO and the version of Rivendell that it
     installs are intended for testing purposes only. As such, it is quite
     likely that they contain bugs, including serious ones that could lead
-    to LOSS OF DATA! DO NOT use this HOWTO for creating production systems!
+    to LOSS OF DATA!
+  </para>
+  <para>
+    DO NOT use this HOWTO for creating production systems!
   </para>
 </sect1>
 
@@ -162,9 +165,9 @@
   <para>
     Select the
     <computeroutput>Erase disk and install Ubuntu Studio</computeroutput>
-    option and then touch <computeroutput>Install Now</computeroutput> to
-    start the actual installation, during which you will be prompted for
-    the timezone to be used on the system.
+    option and then touch the <computeroutput>Install Now</computeroutput>
+    button. You will then be prompted for the timezone to be used on the
+    system.
   </para>
   <para>
     <mediaobject>
@@ -218,7 +221,8 @@
   <para>
     When everything is filled out as you wish, touch the
     <computeroutput>Continue</computeroutput> button to begin the actual
-    installation. This will take a few minutes.
+    installation. Depending on the speed of your Internet connction, this
+    will take anywhere from a few minutes to an hour or more.
   </para>
   <para>
     <mediaobject>
@@ -267,9 +271,9 @@
   </para>
   <para>
     You may also be prompted to install updated software packages (evidenced
-    by the appearance of an item the phrase &quot;[Software Updater]&quot; on
-    the top taskbar of the desktop). If this happens, touch the item to
-    open the updater dialog and then the
+    by the appearance of an item with the phrase
+    &quot;[Software Updater]&quot; on the top taskbar of the desktop).
+    If this happens, touch the item to open the updater dialog and then the
     <computeroutput>Install Now</computeroutput> button to install the
     updates.
   </para>
@@ -319,7 +323,7 @@
     </mediaobject>
   </para>
   <para>
-    Enter the following statement in the Terminal window exactly as shown,
+    Enter the following statements in the Terminal window exactly as shown,
     pressing the <userinput>Enter</userinput> key after each one:
   </para>
   <para>
@@ -337,8 +341,8 @@
     during the installation process.
   </para>
   <note>
-    The password will <emphasis>not</emphasis> be visible on the screen
-    as you enter it!
+    The password will not be visible on the screen as you enter it.
+    This is normal.
   </note>
   <para>
     <mediaobject>
@@ -416,8 +420,27 @@
   <para>
     <userinput>sudo reboot</userinput>
   </para>
+</sect1>
+
+<sect1>
+  <title>Final Details</title>
   <para>
-    After the reboot, the system is ready for service.
+    After rebooting, the system will come back in GUI mode. To secure the
+    system fully, open a <computeroutput>Terminal</computeroutput> as
+    directed above and perform the following steps:
+  </para>
+  <orderedlist>
+    <listitem>
+      <para>
+	Remove the Rivendell installer script with the following command:
+      </para>
+      <para>
+	<userinput>sudo apt -y autoremove ubuntu-rivendell-installer</userinput>
+      </para>
+    </listitem>
+  </orderedlist>
+  <para>
+    The system is now ready for service.
   </para>
 </sect1>
 

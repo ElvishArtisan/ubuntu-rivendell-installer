@@ -130,3 +130,5 @@
 	connections after being installed using '--server' mode.
 2021-10-14 Fred Gleason <fredg@paravelsystems.com>
 	* Removed the 'Final Details' section from 'docs/index.xml'.
+2021-10-14 Fred Gleason <fredg@paravelsystems.com>
+	* Incremented the package version to 0.2.0focal.

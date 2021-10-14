@@ -128,3 +128,5 @@
 2021-10-14 Fred Gleason <fredg@paravelsystems.com>
 	* Fixed a regression that caused MariaDB to refuse network
 	connections after being installed using '--server' mode.
+2021-10-14 Fred Gleason <fredg@paravelsystems.com>
+	* Removed the 'Final Details' section from 'docs/index.xml'.

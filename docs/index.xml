@@ -420,27 +420,8 @@
   <para>
     <userinput>sudo reboot</userinput>
   </para>
-</sect1>
-
-<sect1>
-  <title>Final Details</title>
   <para>
-    After rebooting, the system will come back in GUI mode. To secure the
-    system fully, open a <computeroutput>Terminal</computeroutput> as
-    directed above and perform the following steps:
-  </para>
-  <orderedlist>
-    <listitem>
-      <para>
-	Remove the Rivendell installer script with the following command:
-      </para>
-      <para>
-	<userinput>sudo apt -y autoremove ubuntu-rivendell-installer</userinput>
-      </para>
-    </listitem>
-  </orderedlist>
-  <para>
-    The system is now ready for service.
+    After rebooting, the system is ready for service.
   </para>
 </sect1>
 

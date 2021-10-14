@@ -119,3 +119,5 @@
 2021-10-12 Fred Gleason <fredg@paravelsystems.com>
 	* Amplified the instructions about applying online updates before
 	running the installation script.
+2021-10-14 Fred Gleason <fredg@paravelsystems.com>
+	* Fixed a typo in 'docs/Makefile.am' that broke the build.

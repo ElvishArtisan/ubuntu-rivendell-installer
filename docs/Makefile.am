@@ -39,7 +39,7 @@ EXTRA_DIST = bootscreen.png\
              keyboard_layout.png\
              opening_terminal.png\
              slideshow.png\
-             docs/software_on_this_computer_is_up_to_date.png\
+             software_on_this_computer_is_up_to_date.png\
              terminal_window.png\
              updated_software_has_been_issued.png\
              updates_and_other_software.png\

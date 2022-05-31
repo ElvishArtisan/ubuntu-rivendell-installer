@@ -137,3 +137,5 @@
 	'assets/90-rivendell.cnf'.
 2022-03-01 Fred Gleason <fredg@paravelsystems.com>
 	* Incremented the package version to 0.9.0focal.
+2022-05-31 Fred Gleason <fredg@paravelsystems.com>
+	* Forked branch 'jammy_22.04' from 'focal_20.04'.

@@ -2,7 +2,7 @@
 
 # install_rivendell.sh
 #
-# Install Rivendell 4.x on an Ubuntu 20.04 system
+# Install Rivendell 4.x on an Ubuntu 22.04 system
 #
 
 #
@@ -35,7 +35,7 @@ fi
 #
 # Install Dependencies
 #
-apt -y install openssh-server patch evince telnet samba ntp emacs nfs-common smbclient xfce4-screenshooter net-tools traceroute gedit ntfs-3g autofs
+apt -y install openssh-server patch evince telnet samba chrony emacs nfs-common smbclient xfce4-screenshooter net-tools traceroute gedit ntfs-3g autofs
 
 if test $MODE = "server" ; then
     #

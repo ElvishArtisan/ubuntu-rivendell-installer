@@ -155,7 +155,7 @@ if test $MODE = "server" ; then
     # Create Rivendell Database
     #
     rddbmgr --create --generate-audio
-    echo "update `STATIONS` set `REPORT_EDITOR_PATH`='/usr/bin/gedit'" | mysql -u root Rivendell
+    echo update\ \`STATIONS\`\ set\ \`REPORT_EDITOR_PATH\`=\'/usr/bin/gedit\' | mysql -u root Rivendell
 fi
 
 if test $MODE = "standalone" ; then
@@ -169,7 +169,7 @@ if test $MODE = "standalone" ; then
     # Create Rivendell Database
     #
     rddbmgr --create --generate-audio
-    echo "update STATIONS set REPORT_EDITOR_PATH='/usr/bin/gedit'" | mysql -u root Rivendell
+    echo update\ \`STATIONS\`\ set\ \`REPORT_EDITOR_PATH\`=\'/usr/bin/gedit\' | mysql -u root Rivendell
 
     #
     # Create common directories

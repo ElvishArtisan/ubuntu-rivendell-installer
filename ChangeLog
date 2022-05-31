@@ -142,3 +142,6 @@
 2022-05-31 Fred Gleason <fredg@paravelsystems.com>
 	* Replaced the 'ntp' package with 'chrony'.
 	* Removed the 'xfce4-screenshooter' package.
+2022-05-31 Fred Gleason <fredg@paravelsystems.com>
+	* Fixed a bug that threw a SQL error when attempting to set the
+	Report Editor to gedit(1).

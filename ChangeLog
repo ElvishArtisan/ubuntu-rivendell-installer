@@ -145,3 +145,8 @@
 2022-05-31 Fred Gleason <fredg@paravelsystems.com>
 	* Fixed a bug that threw a SQL error when attempting to set the
 	Report Editor to gedit(1).
+2022-06-25 Fred Gleason <fredg@paravelsystems.com>
+	* Added code to the 'make sign' target in 'repo/Makefile.repo' to
+	force a restart of the GnuPG agent before attempting to generate
+	signatures.
+	* Updated the destination repo location in 'repo/Makefile.repo'.

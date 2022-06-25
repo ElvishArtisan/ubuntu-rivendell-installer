@@ -1,4 +1,4 @@
-# Makefile for the Paravel Ubuntu 20.04 repo
+# Makefile for the Paravel Ubuntu 22.04 repo
 
 #SHELL := /bin/bash
 
@@ -6,6 +6,7 @@ REPO_KEY = "Paravel Ubuntu 20.04 Test Key"
 
 
 sign:	clean sane
+	gpgconf --kill gpg-agent
 	apt-ftparchive --arch amd64 packages binary-amd64 > Packages
 	gzip -k -f Packages
 	apt-ftparchive release . > Release
@@ -14,7 +15,7 @@ sign:	clean sane
 	gpg --export $(REPO_KEY) > Paravel-Ubuntu-20.04-Test.gpg
 
 post:	sane
-	rsync -rptgoDv --copy-links --delete --exclude Makefile --exclude sanity_check.sh . software.paravelsystems.com::ubuntu_focal/
+	rsync -rptgoDv --copy-links --delete --exclude Makefile --exclude sanity_check.sh . software.paravelsystems.com::ubuntu_jammy/
 
 sane:	
 	./sanity_check.sh  

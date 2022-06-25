@@ -7,7 +7,7 @@ if test "$ID" != "ubuntu" ; then
    exit 1
 fi
 
-if test "$VERSION_ID" != "20.04" ; then
+if test "$VERSION_ID" != "22.04" ; then
    echo "unexpected distro VERSION_ID"
    exit 1
 fi

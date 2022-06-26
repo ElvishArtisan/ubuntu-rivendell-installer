@@ -35,7 +35,7 @@ fi
 #
 # Install Dependencies
 #
-apt -y install openssh-server patch evince telnet samba chrony emacs nfs-common smbclient xfce4-screenshooter net-tools traceroute gedit ntfs-3g autofs
+apt -y install openssh-server patch evince telnet samba chrony emacs nfs-common smbclient net-tools traceroute gedit ntfs-3g autofs
 
 if test $MODE = "server" ; then
     #
@@ -131,8 +131,6 @@ fi
 patch -p0 /etc/rsyslog.d/50-default.conf /usr/share/ubuntu-rivendell-installer/50-default.conf.patch
 rm -f /etc/asound.conf
 cp /usr/share/ubuntu-rivendell-installer/asound.conf /etc/
-#cp /usr/share/ubuntu-rivendell-installer/*.repo /etc/yum.repos.d/
-#cp /usr/share/ubuntu-rivendell-installer/RPM-GPG-KEY* /etc/pki/rpm-gpg/
 mkdir -p /usr/share/pixmaps/rivendell
 cp /usr/share/ubuntu-rivendell-installer/rdairplay_skin.png /usr/share/pixmaps/rivendell/
 cp /usr/share/ubuntu-rivendell-installer/rdpanel_skin.png /usr/share/pixmaps/rivendell/

@@ -150,3 +150,8 @@
 	force a restart of the GnuPG agent before attempting to generate
 	signatures.
 	* Updated the destination repo location in 'repo/Makefile.repo'.
+2022-06-25 Fred Gleason <fredg@paravelsystems.com>
+	* Removed irrelevant information regarding RPM packaging from
+	'INSTALL'.
+	* Added instructions for generating repo signing keys in 'INSTALL'.
+	* Corrected key names to be appropriate for Jammy Jellyfish.

@@ -3,16 +3,18 @@ This is the 'INSTALL' file for the rivendell-install package.
 Please see the 'README' file for an overview and basic rationale for
 this package.
 
-Installing Rivendell using the rivendell-install package consists of three
-primary steps:
+GENERATING A REPO SIGNING KEY-PAIR
+----------------------------------
 
-1) Install the base RHEL (CentOS, Scientific Linux) distribution in
-   'Minimal' mode and establish an Internet connection.
+1) Do 'gpg --full-generate-key' and answer the prompts as follows:
 
-2) Bootstrap and run the installation script.
+  Please select what kind of key you want: (1) RSA and RSA (default)
+  What keysize do you want? (3072): 4096
+  Key is valid for? (0): 0
+  Real name: Paravel Ubuntu 00.00 Example Key
+  Email address: someone@example.com
+  Comment:
 
-3) Reboot and finish up final details.
+2) Get the key ID by doing: 'gpg --list-keys | grep -2 "Paravel Ubuntu 00.00 Example Key"'
 
-The specific installation steps vary somewhat depending upon which major
-RHEL version is being used.  See the documentation in 'docs/' for detailed
-steps for each.
+3) Export the public key by doing: 'gpg --output <filepath> --export <keyid>

@@ -2,7 +2,7 @@
 
 #SHELL := /bin/bash
 
-REPO_KEY = "Paravel Ubuntu 20.04 Test Key"
+REPO_KEY = "Paravel Ubuntu 22.04 Test"
 
 
 sign:	clean sane
@@ -12,7 +12,7 @@ sign:	clean sane
 	apt-ftparchive release . > Release
 	gpg --default-key $(REPO_KEY) -abs -o Release.gpg Release
 	gpg --default-key $(REPO_KEY) --clearsign -o InRelease Release
-	gpg --export $(REPO_KEY) > Paravel-Ubuntu-20.04-Test.gpg
+	gpg --export $(REPO_KEY) > Paravel-Ubuntu-22.04-Test.gpg
 
 post:	sane
 	rsync -rptgoDv --copy-links --delete --exclude Makefile --exclude sanity_check.sh . software.paravelsystems.com::ubuntu_jammy/

@@ -2,7 +2,7 @@
 
 # install_rivendell_devel.sh
 #
-# Install the Rivendell 4.x development tools on an Ubuntu 20.04 system
+# Install the Rivendell 4.x development tools on an Ubuntu 22.04 system
 #
 #    Copyright (C) 2021 Fred Gleason <fredg@paravelsystems.com>
 #

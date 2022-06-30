@@ -34,7 +34,7 @@ maintainer-clean-local:
 	rm -rf m4
 
 howto:	all
-	rsync -rptgoDv --delete docs/*.html docs/*.png software.paravelsystems.com::howtos/ubuntu/focal/
+	rsync -rptgoDv --delete docs/*.html docs/*.png software.paravelsystems.com::howtos/ubuntu/jammy/
 
 deb:	dist
 	./build_debs.sh

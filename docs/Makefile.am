@@ -30,6 +30,7 @@
 all-local:	index.html
 
 EXTRA_DIST = bootscreen.png\
+             help_improve_ubuntu.png\
              incomplete_language_support.png\
              installation_complete.png\
              installation_type.png\
@@ -37,7 +38,10 @@ EXTRA_DIST = bootscreen.png\
              index.xml\
              installer_menu.png\
              keyboard_layout.png\
+             online_accounts.png\
              opening_terminal.png\
+             privacy.png\
+             ready_to_go.png\
              slideshow.png\
              software_on_this_computer_is_up_to_date.png\
              terminal_window.png\
@@ -46,7 +50,8 @@ EXTRA_DIST = bootscreen.png\
              user_rd_password_prompt.png\
              welcome.png\
              where_are_you.png\
-             who_are_you.png
+             who_are_you.png\
+             write_changes_to_disc.png
 
 
 CLEANFILES = *~

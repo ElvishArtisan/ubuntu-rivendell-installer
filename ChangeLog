@@ -157,3 +157,5 @@
 	* Corrected key names to be appropriate for Jammy Jellyfish.
 2022-06-25 Fred Gleason <fredg@paravelsystems.com>
 	* Removed the 'xfce4-screenshooter' package from the installation.
+2022-06-30 Fred Gleason <fredg@paravelsystems.com>
+	* Updated the HOWTO document.

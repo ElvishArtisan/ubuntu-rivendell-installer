@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <article xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink">
 <info>
-  <title>Creating a Rivendell 4 dedicated appliance using Ubuntu Studio 20.04
-  LTS Focal Fossa</title>
+  <title>Creating a Rivendell 4 dedicated appliance using Ubuntu Desktop 22.04
+  LTS Jammy Jellyfish</title>
   <author>
     <personname>
       <firstname>Fred</firstname>
@@ -32,10 +32,10 @@
     <para>
       This HOWTO contains procedures for creating a dedicated Rivendell
       &quot;appliance&quot; system using the
-      Ubuntu Studio 20.04 LTS Focal Fossa distribution.
+      Ubuntu 22.04 LTS Jammy Jellyfish distribution.
     </para>
     <para>
-      Installing Rivendell on Ubuntu Studio consists of these primary steps:
+      Installing Rivendell on Ubuntu Desktop consists of these primary steps:
     </para>
     <orderedlist>
       <listitem>
@@ -73,9 +73,9 @@
       </listitem>
       <listitem>
 	<para>
-	  A installer image for Ubuntu Studio 20.04 LTS Focal Fossa,
-	  available at <link xlink:href="https://ubuntustudio.org/">
-	  https://ubuntustudio.org/</link>. After downloading the
+	  A installer image for Ubuntu Desktop 22.04 LTS Jammy Jellyfish,
+	  available at <link xlink:href="https://ubuntu.com/download/desktop">
+	  https://ubuntu.com/download/desktop</link>. After downloading the
 	  ISO image, burn it to a blank DVD or make a "bootable" USB
 	  key using the instructions on the download web site.
 	</para>
@@ -100,8 +100,8 @@
 <sect1>
   <title>Installing the Base Distribution</title>
   <para>
-    Boot the Ubuntu Studio 20.04 LTS Focal Fossa installation media (DVD or
-    USB key). You should wind up at the initial boot screen.
+    Boot the Ubuntu Desktop 22.04 LTS Jammy Jellyfish installation media
+    (DVD or USB key). You should wind up at the initial boot screen.
   </para>
   <para>
     <mediaobject>
@@ -115,9 +115,9 @@
     the initial boot screen may vary from the example shown.
   </note>
   <para>
-    Highlight the <computeroutput>Install Ubuntu Studio</computeroutput>
+    Highlight the <computeroutput>Try or Install Ubuntu</computeroutput>
     prompt and then press <userinput>Enter</userinput> to proceed to the
-    <computeroutput>Welcome</computeroutput>.
+    <computeroutput>Welcome</computeroutput> screen.
   </para>
   <para>
     <mediaobject>
@@ -128,7 +128,7 @@
   </para>
   <para>
     You will be asked to specify the language to use for the install.
-    Choose and then touch the <computeroutput>Continue</computeroutput>
+    Choose and then touch the <computeroutput>Install Ubuntu</computeroutput>
     button to proceed to the
     <computeroutput>Keyboard Layout</computeroutput> screen.
   </para>
@@ -164,11 +164,24 @@
   </para>
   <para>
     Select the
-    <computeroutput>Erase disk and install Ubuntu Studio</computeroutput>
+    <computeroutput>Erase disk and install Ubuntu</computeroutput>
     option and then touch the <computeroutput>Install Now</computeroutput>
     button. You will then be prompted for the timezone to be used on the
     system.
   </para>
+  <note>
+    You may be prompted to confirm the changes about to be made to the
+    systems discs at this point.
+    <para>
+    <mediaobject>
+      <imageobject>
+	<imagedata fileref="write_changes_to_disc.png" scale="90"/>
+      </imageobject>
+    </mediaobject>
+    </para>
+    If this happens, touch the <computeroutput>Continue</computeroutput>
+    button to proceed.
+  </note>
   <para>
     <mediaobject>
       <imageobject>
@@ -232,7 +245,7 @@
     </mediaobject>
   </para>
   <para>
-    You should eventually see a message that the installation is complete.
+    You will eventually see a message that the installation is complete.
   </para>
   <para>
     <mediaobject>
@@ -254,6 +267,59 @@
     checkbox when creating the user earlier, the login prompt will be
     skipped.
   </note>
+
+  <para>
+    After logging in, you will see the
+    <computeroutput>Online Accounts</computeroutput> dialog.
+  </para>
+  <para>
+    <mediaobject>
+      <imageobject>
+	<imagedata fileref="online_accounts.png" scale="90"/>
+      </imageobject>
+    </mediaobject>
+  </para>
+  <para>
+    Touch the <computeroutput>Skip</computeroutput> button to proceed to
+    <computeroutput>Help improve Ubuntu</computeroutput> screen.
+  </para>
+  <para>
+    <mediaobject>
+      <imageobject>
+	<imagedata fileref="help_improve_ubuntu.png" scale="90"/>
+      </imageobject>
+    </mediaobject>
+  </para>
+  <para>
+    Make selections as desired and then touch the
+    <computeroutput>Next</computeroutput> to proceed to the
+    <computeroutput>Privacy</computeroutput> screen.
+  </para>
+  <para>
+    <mediaobject>
+      <imageobject>
+	<imagedata fileref="privacy.png" scale="90"/>
+      </imageobject>
+    </mediaobject>
+  </para>
+  <para>
+    Make selections as desired and then touch the
+    <computeroutput>Next</computeroutput> to proceed to the
+    <computeroutput>Ready to go</computeroutput> screen.
+  </para>
+  <para>
+    <mediaobject>
+      <imageobject>
+	<imagedata fileref="ready_to_go.png" scale="90"/>
+      </imageobject>
+    </mediaobject>
+  </para>
+  <para>
+    Touch the <computeroutput>Done</computeroutput> button to exit the
+    <computeroutput>Welcome to Ubuntu</computeroutput> utility.
+  </para>
+
+<!--
   <para>
     After logging in, you may be prompted to update language support.
   </para>
@@ -269,10 +335,11 @@
     <computeroutput>Run this action now</computeroutput> button, and then
     the <computeroutput>Install</computeroutput>.
   </para>
+-->
   <para>
-    You may also be prompted to install updated software packages (evidenced
+    You may be prompted to install updated software packages (evidenced
     by the appearance of an item with the phrase
-    &quot;[Software Updater]&quot; on the top taskbar of the desktop).
+    &quot;Software Updater&quot; on the top taskbar of the desktop).
     If this happens, touch the item to open the updater dialog and then the
     <computeroutput>Install Now</computeroutput> button to install the
     updates.
@@ -295,15 +362,17 @@
     </mediaobject>
   </para>  
   <para>
-    The system is now ready to have Rivendell installed.
+    Touch the <computeroutput>Restart Now</computeroutput> button to reboot
+    the system, following which the system will be ready to have Rivendell
+    installed.
   </para>
 </sect1>
 
 <sect1>
   <title>Running the Installation Script</title>
   <para>
-    Do a right-click with the mouse on the desktop to pop-up and menu
-    and choose the <computeroutput>Open Terminal Here</computeroutput> item.
+    Do a right-click with the mouse on the desktop to pop-up a menu
+    and choose the <computeroutput>Open in Terminal</computeroutput> item.
   </para>
   <para>
     <mediaobject>

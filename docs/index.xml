@@ -396,7 +396,7 @@
     pressing the <userinput>Enter</userinput> key after each one:
   </para>
   <para>
-    <userinput> wget https://software.paravelsystems.com/ubuntu/dists/focal/main/install_rivendell.sh -P .</userinput>
+    <userinput> wget https://software.paravelsystems.com/ubuntu/dists/jammy/main/install_rivendell.sh -P .</userinput>
   </para>
   <para>
     <userinput>chmod 755 install_rivendell.sh</userinput>

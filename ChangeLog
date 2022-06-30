@@ -161,3 +161,6 @@
 	* Updated the HOWTO document.
 2022-06-30 Fred Gleason <fredg@paravelsystems.com>
 	* Incremented the package version to 0.9.0jammy
+2022-06-30 Fred Gleason <fredg@paravelsystems.com>
+	* Fixed a type in the installation instructions that cause the
+	incorrect repo manifest to be installed.

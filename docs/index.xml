@@ -16,8 +16,8 @@
   <title>Warning</title>
   <para>
     This installation HOWTO and the version of Rivendell that it
-    installs are intended for testing purposes only. As such, it is quite
-    likely that they contain bugs, including serious ones that could lead
+    installs are intended for testing purposes only. As such, it is
+    possible that they contain bugs, including serious ones that could lead
     to LOSS OF DATA!
   </para>
   <para>
@@ -32,8 +32,23 @@
     <para>
       This HOWTO contains procedures for creating a dedicated Rivendell
       &quot;appliance&quot; system using the
-      Ubuntu 22.04 LTS Jammy Jellyfish distribution.
+      Ubuntu Desktop 22.04 LTS Jammy Jellyfish distribution. While the
+      screenshots are specific to Ubuntu Desktop, these instructions are
+      also applicable to other distributions devices derived from it. Such
+      distributions include:
     </para>
+    <itemizedlist>
+      <listitem>
+	<para>
+	  Ubuntu Studio 22.04 LTS Jammy Jellyfish
+	</para>
+      </listitem>
+      <listitem>
+	<para>
+	  Linux Mint 21
+	</para>
+      </listitem>
+    </itemizedlist>
     <para>
       Installing Rivendell on Ubuntu Desktop consists of these primary steps:
     </para>

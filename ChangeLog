@@ -168,3 +168,8 @@
 	* Incremented the package version to 0.9.1jammy
 2022-06-30 Fred Gleason <fredg@paravelsystems.com>
 	* Fixed a typo in the post location for the documentation.
+2022-10-12 Fred Gleason <fredg@paravelsystems.com>
+	* Modified the testing warning in the HOWTO to reflect release
+	candidate rather than beta code status.
+	* Added 'Ubuntu Studio 22.04 LTS Jammy Jellyfish' and
+	'Linux Mint 21' to the list of compatible distributions.

@@ -173,3 +173,5 @@
 	candidate rather than beta code status.
 	* Added 'Ubuntu Studio 22.04 LTS Jammy Jellyfish' and
 	'Linux Mint 21' to the list of compatible distributions.
+2022-10-12 Fred Gleason <fredg@paravelsystems.com>
+	* Incremented the package version to 0.9.2jammy

@@ -140,7 +140,7 @@ ln -s /usr/share/rivendell/opsguide.pdf /home/rd/Desktop/Operations\ Guide.pdf
 apt -y install lame rivendell rivendell-opsguide
 cat /etc/rd.conf | sed s/SyslogFacility=1/SyslogFacility=23/g > /etc/rd-temp.conf
 mv -f /etc/rd-temp.conf /etc/rd.conf
-
+usermod -a --groups audio rd
 
 if test $MODE = "server" ; then
     #

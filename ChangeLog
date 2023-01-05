@@ -178,3 +178,5 @@
 2023-01-04 Fred Gleason <fredg@paravelsystems.com>
 	* Modified 'scripts/installer_install_rivendell.sh' to add the 'rd'
 	user to the 'audio' group.
+2023-01-05 Fred Gleason <fredg@paravelsystems.com>
+	* Incremented the package version to 0.9.3jammy

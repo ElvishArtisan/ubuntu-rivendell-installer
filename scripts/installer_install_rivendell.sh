@@ -1,9 +1,21 @@
-#!/bin/sh
+#!/bin/bash
 
 # install_rivendell.sh
 #
 # Install Rivendell 4.x on an Ubuntu 22.04 system
 #
+
+# USAGE: AddDbUser <dbname> <hostname> <username> <password>
+function AddDbUser {
+    echo "CREATE USER '${3}'@'${2}' IDENTIFIED BY '${4}';" | mysql -u root
+    echo "GRANT SELECT,INSERT,UPDATE,DELETE,CREATE,DROP,INDEX,ALTER,CREATE TEMPORARY TABLES,LOCK TABLES ON ${1}.* TO '${3}'@'${2}';" | mysql -u root
+}
+
+function GenerateDefaultRivendellConfiguration {
+    mkdir -p /etc/rivendell.d
+    cat /usr/share/ubuntu-rivendell-installer/rd.conf-sample | sed s/%MYSQL_HOSTNAME%/$MYSQL_HOSTNAME/g | sed s/%MYSQL_LOGINNAME%/$MYSQL_LOGINNAME/g | sed s/%MYSQL_PASSWORD%/$MYSQL_PASSWORD/g | sed s^%NFS_MOUNT_SOURCE%^$NFS_MOUNT_SOURCE^g | sed s/%NFS_MOUNT_TYPE%/$NFS_MOUNT_TYPE/g > /etc/rivendell.d/rd-default.conf
+    ln -s -f /etc/rivendell.d/rd-default.conf /etc/rd.conf
+}
 
 #
 # Get Target Mode
@@ -12,25 +24,73 @@ if test $1 ; then
     case "$1" in
 	--client)
 	    MODE="client"
-	    IP_ADDR=$2
+            MYSQL_HOSTNAME=$2
+            MYSQL_LOGINNAME=$3
+            MYSQL_PASSWORD=$4
+            MYSQL_DATABASE=$5
+            NFS_HOSTNAME=$6
+            NFS_MOUNT_SOURCE=$NFS_HOSTNAME:/var/snd
+            NFS_MOUNT_TYPE="nfs"
 	    ;;
 
 	--server)
 	    MODE="server"
+            MYSQL_HOSTNAME="localhost"
+            MYSQL_LOGINNAME="rduser"
+            MYSQL_PASSWORD=`tr -cd '[:alnum:]' < /dev/urandom | fold -w30 | head -n1`
+            MYSQL_DATABASE="Rivendell"
+            NFS_HOSTNAME=""
+            NFS_MOUNT_SOURCE=""
+            NFS_MOUNT_TYPE=""
 	    ;;
 
 	--standalone)
 	    MODE="standalone"
+            MYSQL_HOSTNAME="localhost"
+            MYSQL_LOGINNAME="rduser"
+            MYSQL_PASSWORD=`tr -cd '[:alnum:]' < /dev/urandom | fold -w30 | head -n1`
+            MYSQL_DATABASE="Rivendell"
+            NFS_HOSTNAME=""
+            NFS_MOUNT_SOURCE=""
+            NFS_MOUNT_TYPE=""
 	    ;;
 
 	*)
-	    echo "USAGE: ./install_rivendell.sh --client|--server|--standalone"
+            echo "invalid invocation!"
 	    exit 256
             ;;
     esac
 else
-    MODE="standalone"
+    echo "no mode specified!"
+    exit 256
 fi
+
+#
+# Dump Input Values
+#
+echo -n "MODE: " >> /root/rivendell_install_log.txt
+echo $MODE >> /root/rivendell_install_log.txt
+
+echo -n "MYSQL_HOSTNAME: " >> /root/rivendell_install_log.txt
+echo $MYSQL_HOSTNAME >> /root/rivendell_install_log.txt
+
+echo -n "MYSQL_LOGINNAME: " >> /root/rivendell_install_log.txt
+echo $MYSQL_LOGINNAME >> /root/rivendell_install_log.txt
+
+echo -n "MYSQL_PASSWORD: " >> /root/rivendell_install_log.txt
+echo $MYSQL_PASSWORD >> /root/rivendell_install_log.txt
+
+echo -n "MYSQL_DATABASE: " >> /root/rivendell_install_log.txt
+echo $MYSQL_DATABASE >> /root/rivendell_install_log.txt
+
+echo -n "NFS_HOSTNAME: " >> /root/rivendell_install_log.txt
+echo $NFS_HOSTNAME >> /root/rivendell_install_log.txt
+
+echo -n "NFS_MOUNT_SOURCE: " >> /root/rivendell_install_log.txt
+echo $NFS_MOUNT_SOURCE >> /root/rivendell_install_log.txt
+
+echo -n "NFS_MOUNT_TYPE: " >> /root/rivendell_install_log.txt
+echo $NFS_MOUNT_TYPE >> /root/rivendell_install_log.txt
 
 #
 # Install Dependencies
@@ -42,20 +102,14 @@ if test $MODE = "server" ; then
     # Install MariaDB
     #
     apt -y install mariadb-server
-    cp -f /usr/share/ubuntu-rivendell-installer/90-rivendell.cnf /etc/mysql/mariadb.conf.d/
+    cp -f /usr/share/ubuntu-rivendell-installer/90-rivendell.cnf /etc/mysql/mysql.conf.d/
 
     #
-    # Enable DB Access for localhost
+    # Create Empty Database
     #
-    echo "CREATE DATABASE Rivendell;" | mysql -u root
-    echo "CREATE USER 'rduser'@'localhost' IDENTIFIED BY 'letmein';" | mysql -u root
-    echo "GRANT SELECT,INSERT,UPDATE,DELETE,CREATE,DROP,INDEX,ALTER,CREATE TEMPORARY TABLES,LOCK TABLES ON Rivendell.* TO 'rduser'@'localhost';" | mysql -u root
-
-    #
-    # Enable DB Access for all remote hosts
-    #
-    echo "CREATE USER 'rduser'@'%' IDENTIFIED BY 'letmein';" | mysql -u root
-    echo "GRANT SELECT,INSERT,UPDATE,DELETE,CREATE,DROP,INDEX,ALTER,CREATE TEMPORARY TABLES,LOCK TABLES ON Rivendell.* TO 'rduser'@'%';" | mysql -u root
+    echo "CREATE DATABASE $MYSQL_DATABASE;" | mysql -u root
+    AddDbUser $MYSQL_DATABASE "localhost" $MYSQL_LOGINNAME $MYSQL_PASSWORD
+    AddDbUser $MYSQL_DATABASE "%" $MYSQL_LOGINNAME $MYSQL_PASSWORD
 
     #
     # Enable NFS Access for all remote hosts
@@ -105,16 +159,15 @@ fi
 
 if test $MODE = "standalone" ; then
     #
-    # Install MariaDB
+    # Install MySQL
     #
     apt -y install mariadb-server
 
     #
-    # Enable DB Access for localhost
+    # Create Empty Database
     #
     echo "CREATE DATABASE Rivendell;" | mysql -u root
-    echo "CREATE USER 'rduser'@'localhost' IDENTIFIED BY 'letmein';" | mysql -u root
-    echo "GRANT SELECT,INSERT,UPDATE,DELETE,CREATE,DROP,INDEX,ALTER,CREATE TEMPORARY TABLES,LOCK TABLES ON Rivendell.* TO 'rduser'@'localhost';" | mysql -u root
+    AddDbUser $MYSQL_DATABASE "localhost" $MYSQL_LOGINNAME $MYSQL_PASSWORD
 
     #
     # Enable CIFS File Sharing
@@ -141,6 +194,8 @@ apt -y install lame rivendell rivendell-opsguide
 cat /etc/rd.conf | sed s/SyslogFacility=1/SyslogFacility=23/g > /etc/rd-temp.conf
 mv -f /etc/rd-temp.conf /etc/rd.conf
 usermod -a --groups audio rd
+
+GenerateDefaultRivendellConfiguration
 
 if test $MODE = "server" ; then
     #
@@ -193,7 +248,7 @@ if test $MODE = "client" ; then
     # Initialize Automounter
     #
     rm -f /etc/auto.rd.audiostore
-    cat /usr/share/ubuntu-rivendell-installer/auto.rd.audiostore.template | sed s/@IP_ADDRESS@/$IP_ADDR/g > /etc/auto.rd.audiostore
+    cat /usr/share/ubuntu-rivendell-installer/auto.rd.audiostore.template | sed s/@IP_ADDRESS@/$NFS_HOSTNAME/g > /etc/auto.rd.audiostore
     mkdir -p /misc/rd_xfer
     rm -f /home/rd/rd_xfer
     ln -s /misc/rd_xfer /home/rd/rd_xfer
@@ -215,14 +270,8 @@ if test $MODE = "client" ; then
     ln -s /misc/traffic_import /home/rd/traffic_import
 
     rm -f /etc/auto.misc
-    cat /usr/share/ubuntu-rivendell-installer/auto.misc.client_template | sed s/@IP_ADDRESS@/$IP_ADDR/g > /etc/auto.misc
+    cat /usr/share/ubuntu-rivendell-installer/auto.misc.client_template | sed s/@IP_ADDRESS@/$NFS_HOSTNAME/g > /etc/auto.misc
     systemctl enable autofs
-
-    #
-    # Configure Rivendell
-    #
-    cat /etc/rd.conf | sed s/localhost/$IP_ADDR/g > /etc/rd-temp.conf
-    mv -f /etc/rd-temp.conf /etc/rd.conf
 fi
 
 #

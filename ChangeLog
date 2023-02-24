@@ -180,3 +180,9 @@
 	user to the 'audio' group.
 2023-01-05 Fred Gleason <fredg@paravelsystems.com>
 	* Incremented the package version to 0.9.3jammy
+2023-02-23 Fred Gleason <fredg@paravelsystems.com>
+	* Refactored the installation scripts to generate and apply a
+	cryptographically strong password for MariaDB access when using
+	'--standalone' and --server' modes.
+	* Refactored the installation scripts to prompt for the MariaDB
+	accound parameters when using '--client' mode.

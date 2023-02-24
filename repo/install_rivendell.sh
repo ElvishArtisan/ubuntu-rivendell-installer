@@ -4,7 +4,7 @@
 #
 # User-facing installation script for Rivendell
 #
-#   (C) Copyright 2021 Fred Gleason <fredg@paravelsystems.com>
+#   (C) Copyright 2021-2023 Fred Gleason <fredg@paravelsystems.com>
 #
 #   This program is free software; you can redistribute it and/or modify
 #   it under the terms of the GNU General Public License as
@@ -79,8 +79,26 @@ function InstallServer {
 
 function InstallClient {
     CheckNetwork
-    echo -n "Enter IP address of Rivendell server: "
-    read RD_SERVER
+    echo -n "Enter the IP address of the Rivendell MySQL/MariaDB server: "
+    read RD_MYSQL_SERVER
+    echo -n "Enter the name of the MySQL/MariaDB Rivendell database [Rivendell]: "
+    read RD_MYSQL_DATABASE
+    if test -z $RD_MYSQL_DATABASE ; then
+	RD_MYSQL_DATABASE="Rivendell"
+    fi
+
+    echo -n "Enter the username of the MySQL/MariaDB Rivendell account: "
+    read RD_MYSQL_USERNAME
+
+    echo -n "Enter the password of the MySQL/MariaDB Rivendell account: "
+    read RD_MYSQL_PASSWORD
+
+    echo -n "Enter the IP address of the Rivendell NFS server [$RD_MYSQL_SERVER]: "
+    read RD_NFS_SERVER
+    if test -z $RD_NFS_SERVER ; then
+	RD_NFS_SERVER=$RD_MYSQL_SERVER
+    fi
+
     AddRepos
     /usr/share/ubuntu-rivendell-installer/installer_install_rivendell.sh --client $RD_SERVER
     Finish
@@ -97,16 +115,21 @@ echo "the Internet and installs it on this system."
 echo
 echo "Three different styles of setup for Rivendell are available:"
 echo
-echo " 1) Standalone. All system components (Rivendell code, database server"
-echo "    and audio store) will be installed on this system, allowing it to"
-echo "    function as a self-contained, autonomous Rivendell system."
+echo " 1) Standalone. All system components (Rivendell application code,"
+echo "    database server and audio store) will be installed on this system,"
+echo "    allowing it to function as a self-contained, autonomous Rivendell"
+echo "    system."
 echo
 echo " 2) Server. Same as Standalone, but in addition, configure the database"
 echo "    and audio store to be shared with other Rivendell systems over the"
 echo "    network."
 echo
-echo " 3) Client. Install just the Rivendell components, configuring it to"
-echo "    use the database and audio store on a shared server."
+echo " 3) Client. Install just the Rivendell application components,"
+echo "    configuring them to use the database and audio store on one or two"
+echo "    shared server(s). You will be prompted for the IP address of the"
+echo "    server(s), as well as the name of the database and the "
+echo "    username / password of the MariaDB database account for accessing"
+echo "    the Rivendell database on that server."
 echo
 echo " 4) Do nothing, and exit this installer."
 echo

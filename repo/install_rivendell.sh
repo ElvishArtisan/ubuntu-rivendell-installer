@@ -101,7 +101,7 @@ function InstallClient {
     fi
 
     AddRepos
-    /usr/share/rhel-rivendell-installer/installer_install_rivendell.sh --client "$RD_MYSQL_SERVER" "$RD_MYSQL_USERNAME" "$RD_MYSQL_PASSWORD" "$RD_MYSQL_DATABASE" "$RD_NFS_SERVER"
+    /usr/share/ubuntu-rivendell-installer/installer_install_rivendell.sh --client "$RD_MYSQL_SERVER" "$RD_MYSQL_USERNAME" "$RD_MYSQL_PASSWORD" "$RD_MYSQL_DATABASE" "$RD_NFS_SERVER"
     Finish
     exit 0
 }

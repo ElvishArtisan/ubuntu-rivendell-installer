@@ -478,16 +478,20 @@
 	<term>Client</term>
 	<listitem>
 	  <para>
-	    Install only the Rivendell application code and configure
-	    the system to use the MySQL database and audio file store
-	    components located on a separate &quot;server&quot; system.
-	    You will be prompted to enter the IP address of that server
-	    system before the installation starts.
+	    Install just the Rivendell application components, configuring
+	    it to use the database and audio store on one or two shared
+	    server(s).
+	    You will be prompted for the IP address of the server(s), as well
+	    as the name of the database and the username / password of a
+	    MariaDB database account for accessing the Rivendell database on
+	    that server.
 	  </para>
-	  <para>
-	    The &quot;server&quot; does not actually need to be online
-	    during this installation.
-	  </para>
+	  <note>
+	    When prompted to enter the IP address of the NFS server that
+	    holds the Rivendell audio store, simply hit the
+	    <userinput>Enter</userinput> key if it is on the same server as
+	    the MariaDB database (almost always the case).
+	  </note>
 	</listitem>
       </varlistentry>
     </variablelist>

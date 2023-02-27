@@ -102,7 +102,8 @@ if test $MODE = "server" ; then
     # Install MariaDB
     #
     apt -y install mariadb-server
-    cp -f /usr/share/ubuntu-rivendell-installer/90-rivendell.cnf /etc/mysql/mysql.conf.d/
+    mkdir -p /etc/mysql/mariadb.conf.d
+    cp -f /usr/share/ubuntu-rivendell-installer/90-rivendell.cnf /etc/mysql/mariadb.conf.d/
 
     #
     # Create Empty Database

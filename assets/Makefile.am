@@ -28,8 +28,6 @@ EXTRA_DIST = 50-default.conf.patch\
              docbook5.sh\
              paravel_support.pdf\
              rd.conf-sample\
-             rdairplay_skin.png\
-             rdpanel_skin.png\
              samba_shares.conf\
              xfce-config.tgz
 

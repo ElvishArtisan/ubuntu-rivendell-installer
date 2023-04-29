@@ -186,8 +186,6 @@ patch -p0 /etc/rsyslog.d/50-default.conf /usr/share/ubuntu-rivendell-installer/5
 rm -f /etc/asound.conf
 cp /usr/share/ubuntu-rivendell-installer/asound.conf /etc/
 mkdir -p /usr/share/pixmaps/rivendell
-cp /usr/share/ubuntu-rivendell-installer/rdairplay_skin.png /usr/share/pixmaps/rivendell/
-cp /usr/share/ubuntu-rivendell-installer/rdpanel_skin.png /usr/share/pixmaps/rivendell/
 cp /usr/share/ubuntu-rivendell-installer/paravel_support.pdf /home/rd/Desktop/First\ Steps.pdf
 chown rd:rd /home/rd/Desktop/First\ Steps.pdf
 ln -s /usr/share/rivendell/opsguide.pdf /home/rd/Desktop/Operations\ Guide.pdf

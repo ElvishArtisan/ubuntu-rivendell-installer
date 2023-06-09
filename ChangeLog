@@ -202,3 +202,5 @@
 2023-06-09 Fred Gleason <fredg@paravelsystems.com>
 	* Added 'libmad0', 'libtwolame0' and 'libmp3lame0' to the set of
 	package dependencies.
+2023-06-09 Fred Gleason <fredg@paravelsystems.com>
+	* Incremented the package version to 1.0.1jammy

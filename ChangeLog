@@ -204,3 +204,5 @@
 	package dependencies.
 2023-06-09 Fred Gleason <fredg@paravelsystems.com>
 	* Incremented the package version to 1.0.1jammy
+2023-06-16 Fred Gleason <fredg@paravelsystems.com>
+	* Removed the Release Candidate warning from the installation HOWTO.

@@ -1,0 +1,19 @@
+Tip for tuning Linux Mint 21
+
+# Remove LibreOffice
+apt purge libreoffice-base libreoffice-base-core liblibreoffice-java libreoffice-base-drivers libreoffice-core libreoffice-common libreoffice-calc libreoffice-writer libreoffice-style-colibre libuno* mythes* hyphen-ru
+
+# Remove unneeded packages
+apt autoremove
+
+# Disable Update Manager
+Applications->Session and Startup->Application Autostart
+  Blueman Applet
+  Power Manager
+  Screen Locker
+  Update Manager
+
+# Disable Avahi Service
+  systemctl stop avahi-daemon
+  systemctl disable avahi-daemon
+  systemctl mask avahi-daemon

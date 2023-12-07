@@ -208,3 +208,6 @@
 	* Removed the Release Candidate warning from the installation HOWTO
 2023-11-21 Fred Gleason <fredg@paravelsystems.com>
 	* Added 'docs/mint21_cleanups.txt'.
+2023-12-07 Fred Gleason <fredg@paravelsystems.com>
+	* Removed 'Power Manager' from the list of services to be disabled
+	in 'docs/mint21_cleanups.txt'.

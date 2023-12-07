@@ -9,7 +9,6 @@ apt autoremove
 # Disable Update Manager
 Applications->Session and Startup->Application Autostart
   Blueman Applet
-  Power Manager
   Screen Locker
   Update Manager
 
@@ -17,3 +16,7 @@ Applications->Session and Startup->Application Autostart
   systemctl stop avahi-daemon
   systemctl disable avahi-daemon
   systemctl mask avahi-daemon
+
+grep asihpi /proc/modules
+dkms build -m asihpi -v 4.20.39
+dkms install -m asihpi -v 4.20.39

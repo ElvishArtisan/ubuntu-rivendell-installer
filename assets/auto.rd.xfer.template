@@ -1,0 +1,6 @@
+# This file maps folders on the Rivendell server to this workstation.
+/misc/rd_xfer		-fstype=nfs,rw,noexec	@IP_ADDRESS@:/home/rd/rd_xfer
+/misc/music_import	-fstype=nfs,rw,noexec	@IP_ADDRESS@:/home/rd/music_import
+/misc/music_export	-fstype=nfs,rw,noexec	@IP_ADDRESS@:/home/rd/music_export
+/misc/traffic_import	-fstype=nfs,rw,noexec	@IP_ADDRESS@:/home/rd/traffic_import
+/misc/traffic_export	-fstype=nfs,rw,noexec	@IP_ADDRESS@:/home/rd/traffic_export

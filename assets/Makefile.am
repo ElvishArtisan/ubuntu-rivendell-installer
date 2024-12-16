@@ -23,12 +23,12 @@ EXTRA_DIST = 50-default.conf.patch\
              60-ipv6-disable.conf-DISABLED\
              90-rivendell.cnf\
              asound.conf\
-             auto.misc.template\
-             auto.misc.client_template\
              auto.rd.audiostore.template\
+             auto.rd.xfer.template\
              docbook5.sh\
              paravel_support.pdf\
              rd.conf-sample\
+             rd.xfer.autofs\
              samba_shares.conf\
              xfce-config.tgz
 

@@ -23,6 +23,7 @@ EXTRA_DIST = 50-default.conf.patch\
              60-ipv6-disable.conf-DISABLED\
              90-rivendell.cnf\
              asound.conf\
+             auto.master\
              auto.misc.template\
              auto.misc.client_template\
              auto.rd.audiostore.template\

@@ -218,3 +218,8 @@
 2024-09-09 Fred Gleason <fredg@paravelsystems.com>
 	* Added a convenience config in
 	'/etc/sysctl.d/60-ipv6-disable.conf-DISABLED'.
+2025-03-14 Fred Gleason <fredg@paravelsystems.com>
+	* Fixed bug in '/etc/auto.misc' for the --client install that broke
+	the auxiliary mount points.
+	* Enabled the automounter for all install types.
+

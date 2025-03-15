@@ -227,3 +227,5 @@
 2025-03-14 Fred Gleason <fredg@paravelsystems.com>
 	* Fixed bugs that caused the automounter setup to fail for the
 	--client install.
+2025-03-14 Fred Gleason <fredg@paravelsystems.com>
+	* Incremented the package version to 1.1.2jammy.

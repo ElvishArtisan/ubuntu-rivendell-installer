@@ -182,7 +182,7 @@ fi
 #
 # Convenience Configs
 #
-cp /usr/share/rivendell-installer/60-ipv6-disable.conf-DISABLED /etc/sysctl.d/
+cp /usr/share/ubuntu-rivendell-installer/60-ipv6-disable.conf-DISABLED /etc/sysctl.d/
 
 #
 # Install Rivendell
@@ -271,6 +271,7 @@ if test $MODE = "client" ; then
 fi
 rm -f /etc/auto.master
 cp /usr/share/ubuntu-rivendell-installer/auto.master /etc/
+mkdir /misc
 systemctl enable autofs
 
 #

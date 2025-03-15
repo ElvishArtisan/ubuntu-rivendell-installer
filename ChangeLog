@@ -223,7 +223,7 @@
 	the auxiliary mount points.
 	* Enabled the automounter for all install types.
 2025-03-14 Fred Gleason <fredg@paravelsystems.com>
-	* Incremented the package version to 1.1.1.
+	* Incremented the package version to 1.1.1jammy.
 2025-03-14 Fred Gleason <fredg@paravelsystems.com>
 	* Fixed bugs that caused the automounter setup to fail for the
 	--client install.

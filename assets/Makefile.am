@@ -2,7 +2,7 @@
 ##
 ## common/Makefile.am for the ubuntu-rivendell-installer package.
 ##
-##   (C) Copyright 2021-2024 Fred Gleason <fredg@paravelsystems.com>
+##   (C) Copyright 2021-2025 Fred Gleason <fredg@paravelsystems.com>
 ##
 ##   This program is free software; you can redistribute it and/or modify
 ##   it under the terms of the GNU General Public License version 2 as
@@ -23,6 +23,7 @@ EXTRA_DIST = 50-default.conf.patch\
              60-ipv6-disable.conf-DISABLED\
              90-rivendell.cnf\
              asound.conf\
+             auto.master\
              auto.misc.template\
              auto.misc.client_template\
              auto.rd.audiostore.template\

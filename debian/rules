@@ -15,6 +15,7 @@ binary:
 	mkdir -p debian/ubuntu-rivendell-installer/usr/share/ubuntu-rivendell-installer
 	cp assets/50-default.conf.patch debian/ubuntu-rivendell-installer/usr/share/ubuntu-rivendell-installer/
 	cp assets/asound.conf debian/ubuntu-rivendell-installer/usr/share/ubuntu-rivendell-installer/
+	cp assets/auto.master debian/ubuntu-rivendell-installer/usr/share/ubuntu-rivendell-installer/
 	cp assets/auto.misc.template debian/ubuntu-rivendell-installer/usr/share/ubuntu-rivendell-installer/
 	cp assets/auto.rd.audiostore.template debian/ubuntu-rivendell-installer/usr/share/ubuntu-rivendell-installer/
 	cp assets/auto.misc.client_template debian/ubuntu-rivendell-installer/usr/share/ubuntu-rivendell-installer/

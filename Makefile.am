@@ -1,8 +1,8 @@
-## automake.am
+## Makefile.am
 ##
-## Top level automake.am for the ubuntu-rivendell-installer package.
+## Top level Makefile.am for the ubuntu-rivendell-installer package.
 ##
-##   (C) Copyright 2021-2024 Fred Gleason <fredg@paravelsystems.com>
+##   (C) Copyright 2021-2025 Fred Gleason <fredg@paravelsystems.com>
 ##
 ##   This program is free software; you can redistribute it and/or modify
 ##   it under the terms of the GNU General Public License version 2 as
@@ -26,6 +26,7 @@ endif
 SUBDIRS = assets\
           debian\
           scripts\
+          utils\
           $(DOCBOOK_AM_OPT)
 
 ACLOCAL_AMFLAGS = -I m4

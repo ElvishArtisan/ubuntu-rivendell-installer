@@ -53,6 +53,7 @@ AC_SUBST(PACKAGE_DATESTAMP,`date +%a\ %b\ %d\ %Y`)
 AC_CONFIG_FILES([ \
     assets/Makefile \
     scripts/Makefile \
+    utils/Makefile \
     docs/Makefile \
     debian/source/Makefile \
     debian/Makefile \

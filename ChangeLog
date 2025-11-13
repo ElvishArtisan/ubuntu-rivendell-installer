@@ -242,3 +242,5 @@
         * Fixed bug in '/etc/auto.misc' for the --client install that broke
         the auxiliary mount points.
         * Enabled the automounter for all install types.
+2025-11-15 Fred Gleason <fredg@paravelsystems.com>
+	* Added a 'utils/create_db/sh' utility.

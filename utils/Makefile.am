@@ -20,7 +20,7 @@
 ## Use automake to process this into a Makefile.in
 
 
-EXTRA_DIST = create_db.sh
+EXTRA_DIST = manage_rd_db.sh
 
 CLEANFILES = *~
 

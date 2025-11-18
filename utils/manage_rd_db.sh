@@ -1,8 +1,8 @@
 #!/bin/bash
 
-# create_db.sh
+# manage_rd_db.sh
 #
-# Create and configure a test Rivendell container.
+# Create and remove Rivendell database containers/configuration.
 #
 #   (C) Copyright 2025 Fred Gleason <fredg@paravelsystems.com>
 #
@@ -20,7 +20,7 @@
 #   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 #
 
-USAGE="create_db.sh add|drop <base-name>"
+USAGE="manage_rd_db.sh add|drop <base-name>"
 
 if test $UID != "0" ; then
     echo "this utility requires root permissions"

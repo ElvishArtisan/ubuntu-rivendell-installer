@@ -229,3 +229,5 @@
 	--client install.
 2025-03-14 Fred Gleason <fredg@paravelsystems.com>
 	* Incremented the package version to 1.1.2jammy.
+2026-02-25 Fred Gleason <fredg@paravelsystems.com>
+	* Added a 'make local' target to 'repo/Makefile.repo'.

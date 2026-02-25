@@ -15,7 +15,11 @@ sign:	clean sane
 	gpg --export $(REPO_KEY) > Paravel-Ubuntu-22.04-Test.gpg
 
 post:	sane
-	rsync -rptgoDv --copy-links --delete --exclude Makefile --exclude sanity_check.sh . software.paravelsystems.com::ubuntu_jammy/
+	rsync -rptgoDv --copy-links --delete --exclude Makefile --exclude sanity_check.sh --exclude *.tar.gz . software.paravelsystems.com::ubuntu_jammy/
+
+local:	sane
+	rsync -rptgoDv --copy-links --delete --exclude Makefile --exclude sanity_check.sh --exclude *.tar.gz . ../../../locals/jammy/main/
+	tar -C ../../../locals/jammy/main/ --exclude Makefile --exclude sanity_check.sh --exclude *.tar.gz -zvcf repo-jammy-2204.tar.gz *
 
 sane:	
 	./sanity_check.sh  
@@ -25,4 +29,5 @@ clean:
 	rm -f Release*
 	rm -f InRelease*
 	rm -f *.gpg
+	rm -f *.tar.gz
 

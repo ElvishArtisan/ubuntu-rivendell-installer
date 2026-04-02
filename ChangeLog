@@ -231,3 +231,8 @@
 	* Incremented the package version to 1.1.2jammy.
 2026-02-25 Fred Gleason <fredg@paravelsystems.com>
 	* Added a 'make local' target to 'repo/Makefile.repo'.
+2026-04-02 Fred Gleason <fredg@paravelsystems.com>
+	* Modified 'repo/install_rivendell.sh' to allow an alternative
+	installation repo to be specified.
+	* Modified the repo generation system to specify repo parameters
+	through environment variables.

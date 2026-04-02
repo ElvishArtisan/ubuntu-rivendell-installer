@@ -18,3 +18,23 @@ GENERATING A REPO SIGNING KEY-PAIR
 2) Get the key ID by doing: 'gpg --list-keys | grep -2 "Paravel Ubuntu 00.00 Example Key"'
 
 3) Export the public key by doing: 'gpg --output <filepath> --export <keyid>
+
+CONFIGURING THE ENVIRONMENT FOR GENERATING A REPO SOURCE
+--------------------------------------------------------
+
+The following environmental variables must be defined:
+
+$REPO_NAME - The 'human friendly' name of the target repo.
+             Example: REPO_NAME="Paravel-Ubuntu-24.04-Repo"
+
+ $REPO_KEY - The name of the GPG key used to sign the repo packages, as
+             shown by doing 'gpg --list-secret-keys'.
+             Example: REPO_KEY="Paravel Ubuntu 24.04 Repo"
+
+$REPO_RSYNC_TARGET - Path to an rsync module to which to upload repo data
+             (used by 'make post').
+             Example: REPO_RSYNC_TARGET=repo.example.com::ubuntu_noble
+
+$DOCS_RSYNC_TARGET - Path to an rsync module for uploading installation
+             documentation (used by 'make howto').
+             Example: DOCS_RSYNC_TARGET=repo.example.com::howtos/ubuntu/noble

@@ -110,8 +110,8 @@ function InstallClient {
 #
 # Set installation origin
 #
-REPO_URL=https://software.paravelsystems.com/ubuntu/dists/jammy/main
-REPO_NAME=Paravel-Ubuntu-22.04-Test
+REPO_URL=@REPO_URL@
+REPO_NAME=@REPO_NAME@
 if test $# -eq 2 ; then
     REPO_NAME=$1
     REPO_URL=$2

@@ -2,7 +2,7 @@
 ##
 ## docs/Makefile.am for ubuntu-rivendell-installer
 ##
-## (C) Copyright 2021-2023 Fred Gleason <fredg@paravelsystems.com>
+## (C) Copyright 2021-2026 Fred Gleason <fredg@paravelsystems.com>
 ##
 ##   This program is free software; you can redistribute it and/or modify
 ##   it under the terms of the GNU General Public License version 2 as
@@ -54,7 +54,7 @@ EXTRA_DIST = bootscreen.png\
              write_changes_to_disc.png
 
 post:	
-	rsync -rptgoDv --copy-links --delete --exclude Makefile --exclude Makefile.am --exclude Makefile.in --exclude index.xml . software.paravelsystems.com::howtos/ubuntu/jammy/
+	rsync -rptgoDv --copy-links --delete --exclude Makefile --exclude Makefile.am --exclude Makefile.in --exclude index.xml . $DOCS_RSYNC_TARGET/
 
 
 CLEANFILES = *~

@@ -249,3 +249,6 @@
 2026-04-02 Fred Gleason <fredg@paravelsystems.com>
 	* Modified 'repo/install_rivendell.sh' to allow an alternative
 	installation repo to be specified.
+2026-04-02 Fred Gleason <fredg@paravelsystems.com>
+	* Modified the repo generation system to specify repo parameters
+	through environment variables.

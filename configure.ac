@@ -4,7 +4,7 @@ dnl Autoconf configuration for the ubuntu-rivendell-installer package.
 dnl
 dnl Use autoconf to process this into a configure script
 dnl
-dnl   (C) Copyright 2021 Fred Gleason <fredg@paravelsystems.com>
+dnl   (C) Copyright 2021-2026 Fred Gleason <fredg@paravelsystems.com>
 dnl
 dnl   This program is free software; you can redistribute it and/or modify
 dnl   it under the terms of the GNU General Public License version 2 as
@@ -30,6 +30,13 @@ AC_CONFIG_MACRO_DIR([m4])
 # Option Switches
 #
 AC_ARG_ENABLE(docbook,[  --disable-docbook       disable building of documentation],[DOCBOOK_DISABLED=yes],[])
+
+#
+# Environmental Variables
+#
+AC_ARG_VAR(REPO_NAME,[Name of the target APT repo])
+AC_ARG_VAR(REPO_URL,[URL of the target APT repo])
+AC_ARG_VAR(REPO_KEY,[Name of the signing key for the target APT repo])
 
 #
 # Determine Distro
@@ -58,9 +65,12 @@ AC_CONFIG_FILES([ \
     debian/source/Makefile \
     debian/Makefile \
     build_debs.sh \
+    repo/install_rivendell.sh \
+    repo/Makefile \
     Makefile ])
 AC_OUTPUT()
 chmod 755 build_debs.sh
+chmod 755 repo/install_rivendell.sh \
 
 AC_MSG_NOTICE()
 AC_MSG_NOTICE(Now enter 'make' to build the software.)

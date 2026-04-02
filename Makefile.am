@@ -2,7 +2,7 @@
 ##
 ## Top level Makefile.am for the ubuntu-rivendell-installer package.
 ##
-##   (C) Copyright 2021-2025 Fred Gleason <fredg@paravelsystems.com>
+##   (C) Copyright 2021-2026 Fred Gleason <fredg@paravelsystems.com>
 ##
 ##   This program is free software; you can redistribute it and/or modify
 ##   it under the terms of the GNU General Public License version 2 as
@@ -26,6 +26,7 @@ endif
 SUBDIRS = assets\
           debian\
           scripts\
+          repo\
           utils\
           $(DOCBOOK_AM_OPT)
 
@@ -35,7 +36,7 @@ maintainer-clean-local:
 	rm -rf m4
 
 howto:	all
-	rsync -rptgoDv --delete docs/*.html docs/*.png software.paravelsystems.com::howtos/ubuntu/noble/
+	rsync -rptgoDv --delete docs/*.html docs/*.png $DOCS_RSYNC_TARGET/
 
 deb:	dist
 	./build_debs.sh

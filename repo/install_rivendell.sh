@@ -21,6 +21,8 @@
 #   Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 #
 
+USAGE="install_rivendell.sh [<repo-name> <-repo-url>]"
+
 function Continue {
   read -a RESP -p "Continue (y/N) "
   echo
@@ -34,9 +36,9 @@ function Continue {
 
 
 function CheckNetwork {
-    ping -c 2 software.paravelsystems.com > /dev/null 2> /dev/null
+    ping -c 2 $REPO_HOST > /dev/null 2> /dev/null
     if [ $? != 0 ] ; then
-	echo "Unable to access the public Internet, exiting."
+	echo "Unable to reach host at $REPO_HOST, exiting."
 	exit 1
     fi
 }
@@ -44,8 +46,8 @@ function CheckNetwork {
 
 function AddRepos {
     echo "Adding repo..."
-    wget https://software.paravelsystems.com/ubuntu/dists/noble/main/Paravel-Ubuntu-24.04-Repo.gpg -P /etc/apt/trusted.gpg.d/
-    wget https://software.paravelsystems.com/ubuntu/dists/noble/main/Paravel-Ubuntu-24.04-Repo.list -P /etc/apt/sources.list.d/
+    wget $REPO_URL/$REPO_NAME-Repo.gpg -P /etc/apt/trusted.gpg.d/
+    wget $REPO_URL/$REPO_NAME-Repo.list -P /etc/apt/sources.list.d/
     /bin/systemctl daemon-reload
     apt update
     apt -y install ubuntu-rivendell-installer
@@ -107,12 +109,27 @@ function InstallClient {
 }
 
 #
+# Set installation origin
+#
+REPO_URL="https://software.paravelsystems.com/ubuntu/dists/noble/main"
+REPO_NAME="Paravel-Ubuntu-24.04-Repo"
+if test $# -eq 2 ; then
+    REPO_NAME=$1
+    REPO_URL=$2
+fi
+REPO_HOST=$(echo $REPO_URL | sed -e 's@^.*://@@' | sed -e 's/[/:].*$//')
+
+#
 # Print welcome message and menu
 #
 echo "Welcome to the Rivendell installer!"
 echo
-echo "This installer downloads the Rivendell Radio Automation System from"
-echo "the Internet and installs it on this system."
+echo "This installer will download the Rivendell Radio Automation System"
+echo "and install it on this system."
+echo
+echo "SOURCE REPOSITORY"
+echo "Name: $REPO_NAME"
+echo " URL: $REPO_URL"
 echo
 echo "Three different styles of setup for Rivendell are available:"
 echo

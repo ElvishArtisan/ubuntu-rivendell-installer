@@ -246,3 +246,6 @@
 	* Added a 'utils/create_db/sh' utility.
 2025-11-18 Fred Gleason <fredg@paravelsystems.com>
 	* Renamed 'utils/create_db.sh' to 'utils/manage_rd_db.sh'.
+2026-04-02 Fred Gleason <fredg@paravelsystems.com>
+	* Modified 'repo/install_rivendell.sh' to allow an alternative
+	installation repo to be specified.

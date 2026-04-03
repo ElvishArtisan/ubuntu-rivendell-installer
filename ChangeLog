@@ -240,3 +240,5 @@
 	* Incremented the package version to 1.1.3jammy.
 2025-04-03 Fred Gleason <fredg@paravelsystems.com>
 	* Fixed a regression that broke the 'make deb' target.
+2025-04-03 Fred Gleason <fredg@paravelsystems.com>
+	* Incremented the package version to 1.1.4jammy.

@@ -17,3 +17,4 @@ configure
 debian/changelog
 install-sh
 missing
+repo/install_rivendell.sh

@@ -25,6 +25,7 @@ endif
 
 SUBDIRS = assets\
           debian\
+          repo\
           scripts\
           $(DOCBOOK_AM_OPT)
 

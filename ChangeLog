@@ -247,3 +247,6 @@
 	targets.
 2025-04-03 Fred Gleason <fredg@paravelsystems.com>
 	* Incremented the package version to 1.1.5jammy.
+2026-05-13 Fred Gleason <fredg@paravelsystems.com>
+	* Fixed a regression in 'repo/Makefile.repo' that caused gpg(1) to
+	throw an error when executing the 'make sign' target.

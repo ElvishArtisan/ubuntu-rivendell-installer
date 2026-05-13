@@ -7,9 +7,9 @@ sign:	clean sane
 	apt-ftparchive --arch amd64 packages binary-amd64 > Packages
 	gzip -k -f Packages
 	apt-ftparchive release . > Release
-	gpg --default-key $(REPO_KEY) -abs -o Release.gpg Release
-	gpg --default-key $(REPO_KEY) --clearsign -o InRelease Release
-	gpg --export $(REPO_KEY) > $(REPO_NAME).gpg
+	gpg --default-key "$(REPO_KEY)" -abs -o Release.gpg Release
+	gpg --default-key "$(REPO_KEY)" --clearsign -o InRelease Release
+	gpg --export "$(REPO_KEY)" > $(REPO_NAME).gpg
 
 post:	sane
 	rsync -rptgoDv --copy-links --delete --exclude Makefile --exclude sanity_check.sh --exclude *.tar.gz . $(REPO_RSYNC_TARGET)/

@@ -1,0 +1,25 @@
+# Makefile for the Paravel Ubuntu 24.04 repo
+
+#SHELL := /bin/bash
+
+sign:	clean sane
+	gpgconf --kill gpg-agent
+	apt-ftparchive --arch amd64 packages binary-amd64 > Packages
+	gzip -k -f Packages
+	apt-ftparchive release . > Release
+	gpg --default-key $(REPO_KEY) -abs -o Release.gpg Release
+	gpg --default-key $(REPO_KEY) --clearsign -o InRelease Release
+	gpg --export $(REPO_KEY) > $REPO_NAME.gpg
+
+post:	sane
+	rsync -rptgoDv --copy-links --delete --exclude Makefile --exclude sanity_check.sh . $REPO_RSYNC_TARGET/
+
+sane:	
+	./sanity_check.sh  
+
+clean:
+	rm -f Packages*
+	rm -f Release*
+	rm -f InRelease*
+	rm -f *.gpg
+

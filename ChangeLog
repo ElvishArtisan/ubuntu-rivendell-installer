@@ -1,0 +1,254 @@
+2021-05-25 Fred Gleason <fredg@paravelsystems.com>
+	* Created branch 'focal_20.04'.
+	* Populated initial assets and scripts.
+2021-05-25 Fred Gleason <fredg@paravelsystems.com>
+	* Autoconfiscated the package.
+2021-05-25 Fred Gleason <fredg@paravelsystems.com>
+	* Added a 'make deb' target.
+2021-05-25 Fred Gleason <fredg@paravelsystems.com>
+	* Added code to 'debian/rules' to apply 'assets/asound.conf.patch'.
+2021-05-25 Fred Gleason <fredg@paravelsystems.com>
+	* Removed 'smb-common' from the list of installed packages in
+	'scripts/install_rivendell.sh'.
+	* Replaced yum(8) with apt(8) in 'scripts/install_rivendell.sh'.
+	* Added 'docs/steps.txt'.
+2021-05-26 Fred Gleason <fredg@paravelsystems.com>
+	* Fixed a bug in 'debian/rules' that broke the 'make deb' target.
+2021-05-26 Fred Gleason <fredg@paravelsystems.com>
+	* Fixed typos in 'scripts/install_rivendell.sh'.
+2021-05-26 Fred Gleason <fredg@paravelsystems.com>
+	* Cleaned up warnings from mysql(1) in 'scripts/install_rivendell.sh'.
+2021-05-26 Fred Gleason <fredg@paravelsystems.com>
+	* Removed dead code from 'scripts/install_rivendell.sh'.
+2021-05-26 Fred Gleason <fredg@paravelsystems.com>
+	* Added a 'rate 48000' statement to 'assets/asound.conf'.
+2021-05-26 Fred Gleason <fredg@paravelsystems.com>
+	* Added 'docs/'.
+2021-05-26 Fred Gleason <fredg@paravelsystems.com>
+	* Renamed the index node document in 'docs/' to 'index.html'.
+2021-05-27 Fred Gleason <fredg@paravelsystems.com>
+	* Added code to the '--standalone' and --server' installations
+	in 'scripts/install_rivendell.sh' add 'music_import', 'music_export',
+	'traffic_import', 'traffic_import' and 'rd_xfer' shares to
+	the target system's smb.conf(5) file.
+2021-05-27 Fred Gleason <fredg@paravelsystems.com>
+	* Renamed 'scripts/install_rivendell.sh' to
+	'scripts/installer_install_rivendell.sh'.
+	* Created a new 'scripts/install_rivendell.sh'.
+2021-05-27 Fred Gleason <fredg@paravelsystems.com>
+	* Updated 'scripts/installer_install_rivendell.sh' to use NFSv4
+	for the '--server' option.
+2021-05-27 Fred Gleason <fredg@paravelsystems.com>
+	* Added 'assets/auto.rd.audiostore.template' and
+	'assets/auto.misc.client_template' to the package manifest.
+2021-06-02 Fred Gleason <fredg@paravelsystems.com>
+	* Added 'hpklinux-dev' to 'scripts/install_rivendell_devel.sh'.
+2021-06-02 Fred Gleason <fredg@paravelsystems.com>
+	* Corrected the path to the Docbook5 stylesheets in
+	'assets/docbook5.sh'.
+	* Tweaked file permissions of 'assets/docbook5.sh'.
+	* Added code to install 'docbook5.sh' to
+	'install_rivendell_devel.sh'.
+2021-06-04 Fred Gleason <fredg@paravelsystems.com>
+	* Added a patch to enable remote network connections to mysqld(8)
+	when installing in '--server' mode.
+2021-06-04 Fred Gleason <fredg@paravelsystems.com>
+	* Tweaked the prompt text in 'scripts/install_rivendell.sh'.
+2021-06-04 Fred Gleason <fredg@paravelsystems.com>
+	* Updated 'scripts/auto.misc.client_template' to work properly
+	with autofs v5.1.6.
+2021-06-04 Fred Gleason <fredg@paravelsystems.com>
+	* Adjusted the location of the prompt for the Rivendell server
+	IP address in 'scripts/install_rivendell.sh' so as to occur before
+	making any system changes.
+2021-06-04 Fred Gleason <fredg@paravelsystems.com>
+	* Fixed a bug in 'debian/rules' that resulted in
+	'assets/mysqld.cnf-patch' not being installed correctly.
+2021-06-04 Fred Gleason <fredg@paravelsystems.com>
+	* Fixed a typo in 'scripts/install_rivendell.sh' that caused the
+	server IP address to be incorrectly configured when using '--client'
+	mode.
+2021-06-04 Fred Gleason <fredg@paravelsystems.com>
+	* Added code to 'scripts/installer_install_rivendell.sh' to
+	change the 'SyslogFacility=1' line to 'SyslogFacility=23' in
+	'/etc/rd.conf'.
+	* Fixed a bug in 'scripts/installer_install_rivendell.sh' that
+	failed to preserve '/etc/rd.conf' as a symlink.
+2021-06-04 Fred Gleason <fredg@paravelsystems.com>
+	* Added code to remove the 'ubuntu-rivendell-installer' package
+	after installation completes.
+2021-06-04 Fred Gleason <fredg@paravelsystems.com>
+	* Removed 'docs/steps.txt'.
+2021-06-05 Fred Gleason <fredg@paravelsystems.com>
+	* Added 'repo/' directory to contains files to be symlinked to
+	the 'main/' directory of the repo file hierarchy.
+	* Moved 'scripts/install_rivendell.sh' to 'repo/install_rivendell.sh'.
+	* Moved 'scripts/install_rivendell_devel.sh' to
+	'repo/install_rivendell_devel.sh'.
+	* Added 'repo/sanity_check.sh'
+	* Added 'repo/Makefile.repo'.
+	* Added 'repo/README'.
+2021-06-05 Fred Gleason <fredg@paravelsystems.com>
+	* Updated 'repo/Makefile.repo' to regenerate the public keychain
+	as part of the 'make sign' target.
+2021-06-07 Fred Gleason <fredg@paravelsystems.com>
+	* Updated 'repo/install_rivendell_devel.sh' so as to not depend upon
+	the 'ubuntu-rivendell-installer' package being installed.
+2021-06-07 Fred Gleason <fredg@paravelsystems.com>
+	* Fixed a regression in 'debian/rules' that caused
+	'install_rivendell.sh' to fail to be included in the package.
+2021-06-07 Fred Gleason <fredg@paravelsystems.com>
+	* Updated 'docs/index.xml' to reflect the new single-download
+	installation script.
+2021-06-07 Fred Gleason <fredg@paravelsystems.com>
+	* Added a beta warning section to the installation instructions.
+2021-06-11 Fred Gleason <fredg@paravelsystems.com>
+	* Modified the build system to derive 'debian/changelog'
+	automatically.
+2021-06-11 Fred Gleason <fredg@paravelsystems.com>
+	* Incremented the package version to 0.1.0.
+2021-06-11 Fred Gleason <fredg@paravelsystems.com>
+	* Added a 'Reboot now' message upon installation completion
+	to 'repo/install_rivendell.sh'.
+2021-06-11 Fred Gleason <fredg@paravelsystems.com>
+	* Incremented the package version to 0.1.1.
+2021-06-11 Fred Gleason <fredg@paravelsystems.com>
+	* Added a 'make howto' target to post instructions.
+2021-10-12 Fred Gleason <fredg@paravelsystems.com>
+	* Changed the repo links to use SSL.
+2021-10-12 Fred Gleason <fredg@paravelsystems.com>
+	* Amplified the instructions about applying online updates before
+	running the installation script.
+2021-10-14 Fred Gleason <fredg@paravelsystems.com>
+	* Fixed a typo in 'docs/Makefile.am' that broke the build.
+2021-10-14 Fred Gleason <fredg@paravelsystems.com>
+	* Replaced MySQL with MariaDB.
+2021-10-14 Fred Gleason <fredg@paravelsystems.com>
+	* Fixed various typos in 'docs/index.xml'.
+2021-10-14 Fred Gleason <fredg@paravelsystems.com>
+	* Fixed a regression that caused MariaDB to refuse network
+	connections after being installed using '--server' mode.
+2021-10-14 Fred Gleason <fredg@paravelsystems.com>
+	* Removed the 'Final Details' section from 'docs/index.xml'.
+2021-10-14 Fred Gleason <fredg@paravelsystems.com>
+	* Incremented the package version to 0.2.0focal.
+2022-03-01 Fred Gleason <fredg@paravelsystems.com>
+	* Changed the name of 'assets/90-rivendell.conf' to
+	'assets/90-rivendell.cnf'.
+2022-03-01 Fred Gleason <fredg@paravelsystems.com>
+	* Incremented the package version to 0.9.0focal.
+2022-05-31 Fred Gleason <fredg@paravelsystems.com>
+	* Forked branch 'jammy_22.04' from 'focal_20.04'.
+2022-05-31 Fred Gleason <fredg@paravelsystems.com>
+	* Replaced the 'ntp' package with 'chrony'.
+	* Removed the 'xfce4-screenshooter' package.
+2022-05-31 Fred Gleason <fredg@paravelsystems.com>
+	* Fixed a bug that threw a SQL error when attempting to set the
+	Report Editor to gedit(1).
+2022-06-25 Fred Gleason <fredg@paravelsystems.com>
+	* Added code to the 'make sign' target in 'repo/Makefile.repo' to
+	force a restart of the GnuPG agent before attempting to generate
+	signatures.
+	* Updated the destination repo location in 'repo/Makefile.repo'.
+2022-06-25 Fred Gleason <fredg@paravelsystems.com>
+	* Removed irrelevant information regarding RPM packaging from
+	'INSTALL'.
+	* Added instructions for generating repo signing keys in 'INSTALL'.
+	* Corrected key names to be appropriate for Jammy Jellyfish.
+2022-06-25 Fred Gleason <fredg@paravelsystems.com>
+	* Removed the 'xfce4-screenshooter' package from the installation.
+2022-06-30 Fred Gleason <fredg@paravelsystems.com>
+	* Updated the HOWTO document.
+2022-06-30 Fred Gleason <fredg@paravelsystems.com>
+	* Incremented the package version to 0.9.0jammy
+2022-06-30 Fred Gleason <fredg@paravelsystems.com>
+	* Fixed a type in the installation instructions that cause the
+	incorrect repo manifest to be installed.
+2022-06-30 Fred Gleason <fredg@paravelsystems.com>
+	* Incremented the package version to 0.9.1jammy
+2022-06-30 Fred Gleason <fredg@paravelsystems.com>
+	* Fixed a typo in the post location for the documentation.
+2022-10-12 Fred Gleason <fredg@paravelsystems.com>
+	* Modified the testing warning in the HOWTO to reflect release
+	candidate rather than beta code status.
+	* Added 'Ubuntu Studio 22.04 LTS Jammy Jellyfish' and
+	'Linux Mint 21' to the list of compatible distributions.
+2022-10-12 Fred Gleason <fredg@paravelsystems.com>
+	* Incremented the package version to 0.9.2jammy
+2023-01-04 Fred Gleason <fredg@paravelsystems.com>
+	* Modified 'scripts/installer_install_rivendell.sh' to add the 'rd'
+	user to the 'audio' group.
+2023-01-05 Fred Gleason <fredg@paravelsystems.com>
+	* Incremented the package version to 0.9.3jammy
+2023-02-23 Fred Gleason <fredg@paravelsystems.com>
+	* Refactored the installation scripts to generate and apply a
+	cryptographically strong password for MariaDB access when using
+	'--standalone' and --server' modes.
+	* Refactored the installation scripts to prompt for the MariaDB
+	accound parameters when using '--client' mode.
+2023-02-27 Fred Gleason <fredg@paravelsystems.com>
+	* Corrected the installation location of '90-rivendell.cnf'.
+2023-02-27 Fred Gleason <fredg@paravelsystems.com>
+	* Fixed a regression in 'repo/install_rivendell.sh' that broke
+	the '--client' mode.
+2023-02-27 Fred Gleason <fredg@paravelsystems.com>
+	* Updated the installation HOWTO.
+2023-02-27 Fred Gleason <fredg@paravelsystems.com>
+	* Added a 'make post' target in 'docs/Makefile.am'.
+2023-03-29 Fred Gleason <fredg@paravelsystems.com>
+	* Removed the default skins for rdairplay(1) and rdpanel(1).
+2023-06-07 Fred Gleason <fredg@paravelsystems.com>
+	* Incremented the package version to 1.0.0jammy
+2023-06-09 Fred Gleason <fredg@paravelsystems.com>
+	* Added 'libmad0', 'libtwolame0' and 'libmp3lame0' to the set of
+	package dependencies.
+2023-06-09 Fred Gleason <fredg@paravelsystems.com>
+	* Incremented the package version to 1.0.1jammy
+2023-06-16 Fred Gleason <fredg@paravelsystems.com>
+	* Removed the Release Candidate warning from the installation HOWTO
+2023-11-21 Fred Gleason <fredg@paravelsystems.com>
+	* Added 'docs/mint21_cleanups.txt'.
+2023-12-07 Fred Gleason <fredg@paravelsystems.com>
+	* Removed 'Power Manager' from the list of services to be disabled
+	in 'docs/mint21_cleanups.txt'.
+2024-04-22 Fred Gleason <fredg@paravelsystems.com>
+	* Forked to branch 'noble_24.04'.
+2024-04-30 Fred Gleason <fredg@paravelsystems.com>
+	* Changed the package version to 0.0.0noble.
+	* Modified basic metadata to reflect Ubuntu 24.04.
+2024-04-30 Fred Gleason <fredg@paravelsystems.com>
+	* Incremented the package version to 0.0.1noble.
+2024-05-01 Fred Gleason <fredg@paravelsystems.com>
+	* Tweaked language in the installation documentation.
+2024-05-01 Fred Gleason <fredg@paravelsystems.com>
+	* Updated the installation HOWTO.
+2024-05-02 Fred Gleason <fredg@paravelsystems.com>
+	* Fixed references to Ubuntu 22.04 Jammy Jellyfish to point to
+	Ubuntu 24.04 Noble Numbat.
+2024-05-02 Fred Gleason <fredg@paravelsystems.com>
+	* Added 'paravelview' and 'lwmon' packages to the base installation.
+2024-05-02 Fred Gleason <fredg@paravelsystems.com>
+	* Incremented the package version to 0.1.1noble.
+2024-05-03 Fred Gleason <fredg@paravelsystems.com>
+	* Added preseeds for the 'postfix' and 'pbuilder' packages.
+2024-05-03 Fred Gleason <fredg@paravelsystems.com>
+	* Incremented the package version to 0.1.2noble.
+2024-09-09 Fred Gleason <fredg@paravelsystems.com>
+	* Added a convenience config in
+	'/etc/sysctl.d/60-ipv6-disable.conf-DISABLED'.
+2025-03-15 Fred Gleason <fredg@paravelsystems.com>
+        * Fixed bugs that caused the automounter setup to fail for the
+        --client install.
+        * Fixed bug in '/etc/auto.misc' for the --client install that broke
+        the auxiliary mount points.
+        * Enabled the automounter for all install types.
+2025-11-15 Fred Gleason <fredg@paravelsystems.com>
+	* Added a 'utils/create_db/sh' utility.
+2025-11-18 Fred Gleason <fredg@paravelsystems.com>
+	* Renamed 'utils/create_db.sh' to 'utils/manage_rd_db.sh'.
+2026-04-02 Fred Gleason <fredg@paravelsystems.com>
+	* Modified 'repo/install_rivendell.sh' to allow an alternative
+	installation repo to be specified.
+2026-04-02 Fred Gleason <fredg@paravelsystems.com>
+	* Modified the repo generation system to specify repo parameters
+	through environment variables.

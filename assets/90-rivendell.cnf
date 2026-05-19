@@ -1,0 +1,7 @@
+# 90-rivendell.cnf
+#
+# Activate MariaDB Networking
+#
+
+[mysqld]
+bind-address   = *

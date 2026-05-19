@@ -36,7 +36,7 @@ maintainer-clean-local:
 	rm -rf m4
 
 howto:	all
-	rsync -rptgoDv --delete docs/*.html docs/*.png $DOCS_RSYNC_TARGET/
+	rsync -rptgoDv --delete docs/*.html docs/*.png $(DOCS_RSYNC_TARGET)/
 
 deb:	dist
 	./build_debs.sh
